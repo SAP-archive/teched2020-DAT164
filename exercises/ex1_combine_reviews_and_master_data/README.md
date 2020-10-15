@@ -1,6 +1,6 @@
 # Exercise 1 - Combine Reviews and Master Data
 
-In this exercise, you will...
+In this exercise, you will combine data for S3 and HANA.
 
 ## Level 2 Heading
 
