@@ -1,6 +1,6 @@
 # Exercise 1 - Combine Reviews and Master Data
 
-In this exercise, you will...
+1 In this exercise, you will...
 
 ## Level 2 Heading
 
