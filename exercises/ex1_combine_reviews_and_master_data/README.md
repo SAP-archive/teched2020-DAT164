@@ -9,6 +9,8 @@ After completing these steps you will have....
 1.	Click here.
 <br>![](./images/00_00_0010.png)
 
+<br>![](./images/00_00_0030.png)
+
 2.	Insert this code.
 ```
  DATA(lt_params) = request->get_form_fields(  ).
