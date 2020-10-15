@@ -1,4 +1,4 @@
-# Exercise 1 - Exercise 1 Description
+# Exercise 2 - Push Data to SAC
 
 In this exercise, we will create...
 
@@ -7,7 +7,7 @@ In this exercise, we will create...
 After completing these steps you will have created...
 
 1. Click here.
-<br>![](/exercises/ex1/images/01_01_0010.png)
+<br>![](./images/01_01_0010.png)
 
 2.	Insert this line of code.
 ```abap
