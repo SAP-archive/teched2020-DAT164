@@ -1,0 +1,81 @@
+{
+	"name": "generated.tableconsumer1_outTable",
+	"description": "auto-generated generated.tableconsumer1_outTable",
+	"vflow.type": "table",
+	"rows": {
+		"components": [
+			{
+				"PRODUCTID": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_10"
+				}
+			},
+			{
+				"CATEGORY": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_50"
+				}
+			},
+			{
+				"CREATEDATE": {
+					"vflow.type": "scalar",
+					"vtype-ID": "com.sap.core.date"
+				}
+			},
+			{
+				"CHANGEDATE": {
+					"vflow.type": "scalar",
+					"vtype-ID": "com.sap.core.date"
+				}
+			},
+			{
+				"PRODUCTNAME": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_50"
+				}
+			},
+			{
+				"PRODUCTDESC": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_1000"
+				}
+			},
+			{
+				"WEIGHT_MEASURE": {
+					"vflow.type": "scalar",
+					"vtype-ID": "com.sap.core.float64"
+				}
+			},
+			{
+				"PRICE": {
+					"vflow.type": "scalar",
+					"vtype-ID": "com.sap.core.float64"
+				}
+			},
+			{
+				"PRODUCTPICURL": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_100"
+				}
+			},
+			{
+				"WIDTH": {
+					"vflow.type": "scalar",
+					"vtype-ID": "com.sap.core.float64"
+				}
+			},
+			{
+				"DEPTH": {
+					"vflow.type": "scalar",
+					"vtype-ID": "com.sap.core.float64"
+				}
+			},
+			{
+				"HEIGHT": {
+					"vflow.type": "scalar",
+					"vtype-ID": "com.sap.core.float64"
+				}
+			}
+		]
+	}
+}

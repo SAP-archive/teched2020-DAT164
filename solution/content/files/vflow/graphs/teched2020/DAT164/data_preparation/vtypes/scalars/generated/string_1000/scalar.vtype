@@ -1,0 +1,7 @@
+{
+	"name": "generated.string_1000",
+	"description": "String(1000)",
+	"vflow.type": "scalar",
+	"template": "string",
+	"value.length": 1000
+}

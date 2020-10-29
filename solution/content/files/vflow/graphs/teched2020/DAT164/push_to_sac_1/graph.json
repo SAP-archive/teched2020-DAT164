@@ -1,0 +1,155 @@
+{
+    "properties": {},
+    "iconsrc": "sac-producer.svg",
+    "description": "[DAT999] Push to SAC 1",
+    "processes": {
+        "sapanalyticscloudproducer1": {
+            "component": "com.sap.sac.producer",
+            "metadata": {
+                "label": "SAP Analytics Cloud Producer",
+                "x": 548.9999980926514,
+                "y": 12,
+                "height": 80,
+                "width": 120,
+                "ui": "dynpath",
+                "config": {
+                    "host": "dwc-rel-hc-ga.rel.hanacloudservices.cloud.sap",
+                    "oauth2AuthUrl": "https://dwc-rel-hc-ga.authentication.sap.hana.ondemand.com/oauth/authorize",
+                    "oauth2TokenUrl": "https://dwc-rel-hc-ga.authentication.sap.hana.ondemand.com/oauth/token",
+                    "oauth2ClientId": "sb-1d60cff6-a456-410e-9ccb-b4229ebcbb0c!b13814|client!b2322",
+                    "oauth2ClientSecret": "URCvhyEVMPXKfu9YQuYWYmyFwgY="
+                }
+            }
+        },
+        "wiretap2": {
+            "component": "com.sap.util.wiretap",
+            "metadata": {
+                "label": "Wiretap",
+                "x": 715.9999980926514,
+                "y": 12,
+                "height": 80,
+                "width": 120,
+                "ui": "dynpath",
+                "config": {}
+            }
+        },
+        "sapanalyticscloudformatter1": {
+            "component": "com.sap.sac.formatter",
+            "metadata": {
+                "label": "SAP Analytics Cloud Formatter",
+                "x": 368.99999809265137,
+                "y": 12,
+                "height": 80,
+                "width": 120,
+                "extensible": true,
+                "config": {
+                    "tenant": "000",
+                    "outputSchema": [
+                        {
+                            "name": "col1",
+                            "class": "integer"
+                        },
+                        {
+                            "name": "col2",
+                            "class": "integer"
+                        },
+                        {
+                            "name": "col3",
+                            "class": "integer"
+                        }
+                    ],
+                    "appendMode": "Replace"
+                }
+            }
+        },
+        "readfile2": {
+            "component": "com.sap.file.read",
+            "metadata": {
+                "label": "Read File",
+                "x": 17,
+                "y": 12,
+                "height": 80,
+                "width": 120,
+                "config": {
+                    "mode": "Once",
+                    "connection": {
+                        "configurationType": "Connection Management",
+                        "connectionID": "S3_DIMITRI"
+                    },
+                    "path": "/sac.txt"
+                }
+            }
+        },
+        "decodetable1": {
+            "component": "com.sap.util.decodeTable",
+            "metadata": {
+                "label": "Decode Table",
+                "x": 187,
+                "y": 12,
+                "height": 80,
+                "width": 120,
+                "extensible": true,
+                "config": {
+                    "inputFormat": "Parquet"
+                }
+            }
+        }
+    },
+    "groups": [],
+    "connections": [
+        {
+            "metadata": {
+                "points": "672.9999980926514,52 710.9999980926514,52"
+            },
+            "src": {
+                "port": "out",
+                "process": "sapanalyticscloudproducer1"
+            },
+            "tgt": {
+                "port": "in",
+                "process": "wiretap2"
+            }
+        },
+        {
+            "metadata": {
+                "points": "492.99999809265137,52 543.9999980926514,52"
+            },
+            "src": {
+                "port": "output",
+                "process": "sapanalyticscloudformatter1"
+            },
+            "tgt": {
+                "port": "in",
+                "process": "sapanalyticscloudproducer1"
+            }
+        },
+        {
+            "metadata": {
+                "points": "141,43 161.5,43 161.5,52 182,52"
+            },
+            "src": {
+                "port": "file",
+                "process": "readfile2"
+            },
+            "tgt": {
+                "port": "inFile",
+                "process": "decodetable1"
+            }
+        },
+        {
+            "metadata": {
+                "points": "311,43 337.5,43 337.5,52 363.99999809265137,52"
+            },
+            "src": {
+                "port": "outTable",
+                "process": "decodetable1"
+            },
+            "tgt": {
+                "port": "input",
+                "process": "sapanalyticscloudformatter1"
+            }
+        }
+    ],
+    "inports": {},
+    "outports": {}
+}

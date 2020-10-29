@@ -1,0 +1,51 @@
+{
+	"name": "generated.structuredfileconsumer1_outTable",
+	"description": "auto-generated generated.structuredfileconsumer1_outTable",
+	"vflow.type": "table",
+	"rows": {
+		"components": [
+			{
+				"REVIEW_ID": {
+					"vflow.type": "scalar",
+					"vtype-ID": "com.sap.core.int32"
+				}
+			},
+			{
+				"PRODUCT_ID": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_7"
+				}
+			},
+			{
+				"CUSTOMER_ID": {
+					"vflow.type": "scalar",
+					"vtype-ID": "com.sap.core.int32"
+				}
+			},
+			{
+				"COUNTRY": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_2"
+				}
+			},
+			{
+				"REVIEW_DATE": {
+					"vflow.type": "scalar",
+					"vtype-ID": "com.sap.core.date"
+				}
+			},
+			{
+				"REVIEW_TITLE": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_27"
+				}
+			},
+			{
+				"REVIEW_TEXT": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_500"
+				}
+			}
+		]
+	}
+}

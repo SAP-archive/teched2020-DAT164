@@ -1,0 +1,87 @@
+{
+	"name": "generated.datatransform1_output1",
+	"description": "auto-generated",
+	"vflow.type": "table",
+	"rows": {
+		"components": [
+			{
+				"PRODUCTID": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_10"
+				}
+			},
+			{
+				"CATEGORY": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_50"
+				}
+			},
+			{
+				"CREATEDATE": {
+					"vflow.type": "scalar",
+					"vtype-ID": "com.sap.core.date"
+				}
+			},
+			{
+				"CHANGEDATE": {
+					"vflow.type": "scalar",
+					"vtype-ID": "com.sap.core.date"
+				}
+			},
+			{
+				"PRODUCTNAME": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_50"
+				}
+			},
+			{
+				"PRODUCTDESC": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_1000"
+				}
+			},
+			{
+				"PRICE": {
+					"vflow.type": "scalar",
+					"vtype-ID": "com.sap.core.float64"
+				}
+			},
+			{
+				"REVIEW_ID": {
+					"vflow.type": "scalar",
+					"vtype-ID": "com.sap.core.int32"
+				}
+			},
+			{
+				"CUSTOMER_ID": {
+					"vflow.type": "scalar",
+					"vtype-ID": "com.sap.core.int32"
+				}
+			},
+			{
+				"COUNTRY": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_2"
+				}
+			},
+			{
+				"REVIEW_DATE": {
+					"vflow.type": "scalar",
+					"vtype-ID": "com.sap.core.date"
+				}
+			},
+			{
+				"REVIEW_TITLE": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_27"
+				}
+			},
+			{
+				"REVIEW_TEXT": {
+					"vflow.type": "scalar",
+					"vtype-ID": "$GRAPH.generated.string_500"
+				}
+			}
+		]
+	}
+}

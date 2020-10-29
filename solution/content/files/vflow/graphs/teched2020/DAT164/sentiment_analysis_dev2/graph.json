@@ -1,0 +1,133 @@
+{
+    "properties": {},
+    "description": "[DAT999] Sentiment Analysis Dev 2",
+    "processes": {
+        "python3operator1": {
+            "component": "com.sap.system.python3Operator",
+            "metadata": {
+                "label": "Python3 Operator",
+                "x": 521.999997138977,
+                "y": 40,
+                "height": 80,
+                "width": 120,
+                "extensible": true,
+                "config": {
+                    "script": "from textblob import TextBlob\n\ndef col_idx(name, msg):\n    return next(filter(lambda x: x[1][\"name\"] == name,  enumerate(msg.attributes[\"table\"][\"columns\"])))[0]\n\n# ////////////////////////////////////////////////////////////////////////////\n# Sentiment Analysis of review using Text Blob\n# \n# ////////////////////////////////////////////////////////////////////////////\ndef on_input(msg):\n    tab = msg.body\n    text_idx = col_idx(\"REVIEW_TEXT\", msg)\n    \n    for r in tab:\n        txt = TextBlob(r[text_idx])\n        r.append(txt.sentiment.polarity)\n        r.append(txt.sentiment.subjectivity)\n    \n    attrs = dict(msg.attributes)\n    attrs[\"table\"][\"columns\"].append({\"name\": \"POLARITY\", \"nullable\": False})\n    attrs[\"table\"][\"columns\"].append({\"name\": \"SUBJECTIVITY\", \"nullable\": False})\n    \n    api.send(\"output\", api.Message(tab, attrs,body_encoding=\"table\"))\n\n\n\napi.set_port_callback(\"input\", on_input)"
+                },
+                "additionalinports": [
+                    {
+                        "name": "input",
+                        "type": "message.table"
+                    }
+                ],
+                "additionaloutports": [
+                    {
+                        "name": "output",
+                        "type": "message.table"
+                    }
+                ]
+            }
+        },
+        "readfile21": {
+            "component": "com.sap.file.read",
+            "metadata": {
+                "label": "Read File",
+                "x": 17,
+                "y": 32,
+                "height": 80,
+                "width": 120,
+                "config": {
+                    "mode": "Once",
+                    "connection": {
+                        "configurationType": "Connection Management",
+                        "connectionID": "AWS_S3"
+                    },
+                    "path": "/DAT999/product_reviews.csv"
+                }
+            },
+            "name": "readfile2"
+        },
+        "decodetable1": {
+            "component": "com.sap.table.decode",
+            "metadata": {
+                "label": "Decode Table",
+                "x": 316.99999809265137,
+                "y": 32,
+                "height": 80,
+                "width": 120,
+                "config": {
+                    "format": "CSV",
+                    "csvHeader": "Column names"
+                }
+            }
+        },
+        "fromfile1": {
+            "component": "com.sap.file.fromFile",
+            "metadata": {
+                "label": "From File",
+                "x": 201.99999904632568,
+                "y": 47,
+                "height": 50,
+                "width": 50,
+                "config": {}
+            }
+        }
+    },
+    "groups": [
+        {
+            "name": "group2",
+            "nodes": [
+                "python3operator1"
+            ],
+            "metadata": {
+                "description": "Group"
+            },
+            "tags": {
+                "textblob36": ""
+            }
+        }
+    ],
+    "connections": [
+        {
+            "metadata": {
+                "points": "141,63 168.99999952316284,63 168.99999952316284,72 196.99999904632568,72"
+            },
+            "src": {
+                "port": "file",
+                "process": "readfile21"
+            },
+            "tgt": {
+                "port": "file",
+                "process": "fromfile1"
+            }
+        },
+        {
+            "metadata": {
+                "points": "255.99999904632568,81 283.9999985694885,81 283.9999985694885,72 311.99999809265137,72"
+            },
+            "src": {
+                "port": "message",
+                "process": "fromfile1"
+            },
+            "tgt": {
+                "port": "input",
+                "process": "decodetable1"
+            }
+        },
+        {
+            "metadata": {
+                "points": "440.99999809265137,72 468.9999976158142,72 468.9999976158142,80 516.999997138977,80"
+            },
+            "src": {
+                "port": "output",
+                "process": "decodetable1"
+            },
+            "tgt": {
+                "port": "input",
+                "process": "python3operator1"
+            }
+        }
+    ],
+    "inports": {},
+    "outports": {}
+}

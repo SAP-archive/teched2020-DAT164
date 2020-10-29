@@ -23,8 +23,6 @@ The requirements to follow the exercises in this repository are:
 
 ## Exercises
 
-Provide the exercise content here directly in README.md using [markdown](https://guides.github.com/features/mastering-markdown/) and linking to the specific exercise pages, below is an example.
-
 - [Getting Started](exercises/ex0_getting_started/)
 - [Exercise 1 - Combine Reviews and Master Data](exercises/ex1_combine_reviews_and_master_data/)
 - [Exercise 2 - Push Data to SAC](exercises/ex2_push_data_to_sac/)

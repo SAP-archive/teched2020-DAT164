@@ -1,0 +1,368 @@
+{
+    "properties": {},
+    "description": "[DAT164] Sentiment Analysis",
+    "processes": {
+        "python3operator1": {
+            "component": "com.sap.system.python3Operator",
+            "metadata": {
+                "label": "Python3 Operator",
+                "x": 690.999997138977,
+                "y": 40,
+                "height": 80,
+                "width": 120,
+                "extensible": true,
+                "config": {
+                    "script": "from textblob import TextBlob\n\ndef col_idx(name, msg):\n    return next(filter(lambda x: x[1][\"name\"] == name,  enumerate(msg.attributes[\"table\"][\"columns\"])))[0]\n\ndef on_input(msg):\n    tab = msg.body\n    text_idx = col_idx(\"REVIEW_TEXT\", msg)\n    \n    for r in tab:\n        txt = TextBlob(r[text_idx])\n        r.append(txt.sentiment.polarity)\n        r.append(txt.sentiment.subjectivity)\n    \n    attrs = dict(msg.attributes)\n    attrs[\"table\"][\"columns\"].append({\"name\": \"POLARITY\", \"nullable\": False})\n    attrs[\"table\"][\"columns\"].append({\"name\": \"SUBJECTIVITY\", \"nullable\": False})\n    \n    api.send(\"output\", api.Message(tab, attrs,body_encoding=\"table\"))\n\napi.set_port_callback(\"input\", on_input)"
+                },
+                "additionalinports": [
+                    {
+                        "name": "input",
+                        "type": "message.table"
+                    }
+                ],
+                "additionaloutports": [
+                    {
+                        "name": "output",
+                        "type": "message.table"
+                    }
+                ]
+            }
+        },
+        "readfile21": {
+            "component": "com.sap.file.read",
+            "metadata": {
+                "label": "Read File",
+                "x": 17,
+                "y": 32,
+                "height": 80,
+                "width": 120,
+                "config": {
+                    "mode": "Once",
+                    "connection": {
+                        "configurationType": "Connection Management",
+                        "connectionID": "AWS_S3"
+                    },
+                    "path": "/DAT999/product_reviews.csv"
+                }
+            },
+            "name": "readfile2"
+        },
+        "wiretap1": {
+            "component": "com.sap.util.wiretap",
+            "metadata": {
+                "label": "Wiretap",
+                "x": 485.99999809265137,
+                "y": 32,
+                "height": 80,
+                "width": 120,
+                "ui": "dynpath",
+                "config": {}
+            }
+        },
+        "decodetable1": {
+            "component": "com.sap.table.decode",
+            "metadata": {
+                "label": "Decode Table",
+                "x": 316.99999809265137,
+                "y": 32,
+                "height": 80,
+                "width": 120,
+                "config": {
+                    "format": "CSV",
+                    "csvHeader": "Column names"
+                }
+            }
+        },
+        "fromfile1": {
+            "component": "com.sap.file.fromFile",
+            "metadata": {
+                "label": "From File",
+                "x": 201.99999904632568,
+                "y": 47,
+                "height": 50,
+                "width": 50,
+                "config": {}
+            }
+        },
+        "wiretap31": {
+            "component": "com.sap.util.wiretap",
+            "metadata": {
+                "label": "Wiretap",
+                "x": 1233.9999961853027,
+                "y": 32,
+                "height": 80,
+                "width": 120,
+                "ui": "dynpath",
+                "config": {}
+            },
+            "name": "wiretap3"
+        },
+        "sapanalyticscloudproducer111": {
+            "component": "com.sap.sac.producer",
+            "metadata": {
+                "label": "SAP Analytics Cloud Producer",
+                "x": 1402.9999961853027,
+                "y": 32,
+                "height": 80,
+                "width": 120,
+                "ui": "dynpath",
+                "config": {
+                    "host": "ai-sandbox.eu10.sapanalytics.cloud",
+                    "oauth2AuthUrl": "https://ai-sandbox.authentication.eu10.hana.ondemand.com/oauth/authorize",
+                    "oauth2TokenUrl": "https://ai-sandbox.authentication.eu10.hana.ondemand.com/oauth/token",
+                    "oauth2ClientId": "sb-1ffadff0-9334-4ff9-9675-a3e053417f51!b50794|client!b3650",
+                    "oauth2ClientSecret": "AzK7cKm6NhpAb7w4PBmIA+NNkDU="
+                }
+            },
+            "name": "sapanalyticscloudproducer11"
+        },
+        "wiretap11": {
+            "component": "com.sap.util.wiretap",
+            "metadata": {
+                "label": "Wiretap",
+                "x": 1571.9999961853027,
+                "y": 32,
+                "height": 80,
+                "width": 120,
+                "ui": "dynpath",
+                "config": {}
+            },
+            "name": "wiretap1"
+        },
+        "wiretap2": {
+            "component": "com.sap.util.wiretap",
+            "metadata": {
+                "label": "Wiretap",
+                "x": 895.9999961853027,
+                "y": 32,
+                "height": 80,
+                "width": 120,
+                "ui": "dynpath",
+                "config": {
+                    "layout": "[%d] %m"
+                }
+            }
+        },
+        "sapanalyticscloudformatter11": {
+            "component": "com.sap.sac.formatter",
+            "metadata": {
+                "label": "SAP Analytics Cloud Formatter",
+                "x": 1064.9999961853027,
+                "y": 32,
+                "height": 80,
+                "width": 120,
+                "extensible": true,
+                "config": {
+                    "tenant": "https://ai-sandbox.eu10.sapanalytics.cloud/sap/fpa/ui/app.html#;view_id=home",
+                    "name": "Sentiment_Analysis",
+                    "inferColumnInfo": false,
+                    "outputSchema": [
+                        {
+                            "name": "PRODUCTID",
+                            "class": "string",
+                            "size": 32
+                        },
+                        {
+                            "name": "CATEGORY",
+                            "class": "string",
+                            "size": 32
+                        },
+                        {
+                            "name": "CREATEDATE",
+                            "class": "date"
+                        },
+                        {
+                            "name": "CHANGEDATE",
+                            "class": "date"
+                        },
+                        {
+                            "name": "PRODUCTNAME",
+                            "class": "string",
+                            "size": 32
+                        },
+                        {
+                            "name": "PRODUCTDESC",
+                            "class": "string",
+                            "size": 1024
+                        },
+                        {
+                            "name": "PRICE",
+                            "class": "number"
+                        },
+                        {
+                            "name": "REVIEW_ID",
+                            "class": "integer"
+                        },
+                        {
+                            "name": "CUSTOMER_ID",
+                            "class": "integer"
+                        },
+                        {
+                            "name": "COUNTRY",
+                            "class": "string",
+                            "size": 32
+                        },
+                        {
+                            "name": "REVIEW_DATE",
+                            "class": "date"
+                        },
+                        {
+                            "name": "REVIEW_TITLE",
+                            "class": "string",
+                            "size": 128
+                        },
+                        {
+                            "name": "REVIEW_TEXT",
+                            "class": "string",
+                            "size": 1024
+                        },
+                        {
+                            "name": "POLARITY",
+                            "class": "number"
+                        },
+                        {
+                            "name": "SUBJECTIVITY",
+                            "class": "number"
+                        }
+                    ]
+                }
+            },
+            "name": "sapanalyticscloudformatter1"
+        }
+    },
+    "groups": [
+        {
+            "name": "group2",
+            "nodes": [
+                "python3operator1"
+            ],
+            "metadata": {
+                "description": "Group"
+            },
+            "tags": {
+                "textblob36": ""
+            }
+        }
+    ],
+    "connections": [
+        {
+            "metadata": {
+                "points": "141,63 168.99999952316284,63 168.99999952316284,72 196.99999904632568,72"
+            },
+            "src": {
+                "port": "file",
+                "process": "readfile21"
+            },
+            "tgt": {
+                "port": "file",
+                "process": "fromfile1"
+            }
+        },
+        {
+            "metadata": {
+                "points": "255.99999904632568,81 283.9999985694885,81 283.9999985694885,72 311.99999809265137,72"
+            },
+            "src": {
+                "port": "message",
+                "process": "fromfile1"
+            },
+            "tgt": {
+                "port": "input",
+                "process": "decodetable1"
+            }
+        },
+        {
+            "metadata": {
+                "points": "440.99999809265137,72 480.99999809265137,72"
+            },
+            "src": {
+                "port": "output",
+                "process": "decodetable1"
+            },
+            "tgt": {
+                "port": "in",
+                "process": "wiretap1"
+            }
+        },
+        {
+            "metadata": {
+                "points": "609.9999980926514,72 637.9999976158142,72 637.9999976158142,80 685.999997138977,80"
+            },
+            "src": {
+                "port": "out",
+                "process": "wiretap1"
+            },
+            "tgt": {
+                "port": "input",
+                "process": "python3operator1"
+            }
+        },
+        {
+            "metadata": {
+                "points": "814.999997138977,80 862.9999966621399,80 862.9999966621399,72 890.9999961853027,72"
+            },
+            "src": {
+                "port": "output",
+                "process": "python3operator1"
+            },
+            "tgt": {
+                "port": "in",
+                "process": "wiretap2"
+            }
+        },
+        {
+            "metadata": {
+                "points": "1188.9999961853027,72 1228.9999961853027,72"
+            },
+            "src": {
+                "port": "output",
+                "process": "sapanalyticscloudformatter11"
+            },
+            "tgt": {
+                "port": "in",
+                "process": "wiretap31"
+            }
+        },
+        {
+            "metadata": {
+                "points": "1357.9999961853027,72 1397.9999961853027,72"
+            },
+            "src": {
+                "port": "out",
+                "process": "wiretap31"
+            },
+            "tgt": {
+                "port": "in",
+                "process": "sapanalyticscloudproducer111"
+            }
+        },
+        {
+            "metadata": {
+                "points": "1526.9999961853027,72 1566.9999961853027,72"
+            },
+            "src": {
+                "port": "out",
+                "process": "sapanalyticscloudproducer111"
+            },
+            "tgt": {
+                "port": "in",
+                "process": "wiretap11"
+            }
+        },
+        {
+            "metadata": {
+                "points": "1019.9999961853027,72 1059.9999961853027,72"
+            },
+            "src": {
+                "port": "out",
+                "process": "wiretap2"
+            },
+            "tgt": {
+                "port": "input",
+                "process": "sapanalyticscloudformatter11"
+            }
+        }
+    ],
+    "inports": {},
+    "outports": {}
+}
