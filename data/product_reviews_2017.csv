@@ -1,0 +1,28 @@
+REVIEW_ID,PRODUCT_ID,CUSTOMER_ID,COUNTRY,REVIEW_DATE,REVIEW_TITLE,REVIEW_TEXT
+1000,HT-1000,100000000,US,2017-01-02,Three stars,Three start. I have some issues like some keys don't work on first instance..and is somewhat slow also
+1001,HT-1001,100000001,CA,2017-01-03,Too hot,Heating and not wake up. Check twice when buy it on Offer.
+1002,HT-1002,100000002,DE,2017-01-04,2nd hand,2nd hand laptops!!! The laptop I received already had an user on it with password etc. These are not new laptops!
+1003,HT-1003,100000003,US,2017-01-05,Best price value,Review: No technical marvel but seems to be the best laptop in a price segment of Rs 55-60K.
+1004,HT-1011,100000004,CA,2017-01-06,Second hand,Very disappointed as this seems to be a second hand product! Moreover the battery power is very low (stand by power is only 4 hour). Maybe it is because it was used already otherwise this is not a reasonably practicable device!
+1005,HT-1020,100000005,DE,2017-01-07,Very bad,Review: very bad. My product is not working what do I do ? I have paid everything! This is very very bad .
+1006,HT-1011,100000006,US,2017-01-08,Waste of money,Review: waste of money. Battery is draining out very quickly after 2-3 hours of usage. Also it's not lasting for more than 7 days once it's in a sleep mode. I cannot recommend it at all and I am very disappointed.
+1007,HT-1007,100000007,CA,2017-01-09,Good product,Review: Good product. But we are not getting on line support for any operation issue in ipad.
+1008,HT-1040,100000008,DE,2017-01-10,One star,Review: One star. scanner not working... tried 2 contact amazon.. not picking
+1009,HT-1050,100000009,US,2017-01-11,5/5 stars,Review: Amazing product and great delivery by Amazon. Kudos to both
+1010,HT-1000,100000010,CA,2017-01-12,3 stars,Review: Three star. very low memory. Not good buy.
+1011,HT-1001,100000011,DE,2017-01-13,battery bad,Review: Bad product. Battery issue with the laptop. Doesn't give backup as expected . Really upset with the product.
+1012,HT-1002,100000012,US,2017-01-14,very happy,Review: not a good product. charger not working after week use
+1013,HT-1002,100000013,CA,2017-01-15,Too expensive,Review: better laptop is available in this price segment.
+1014,HT-1002,100000014,DE,2017-01-16,Bad experiences,Review:  have had extremely bad experiences with Apple products. they suffer from a chronic problem which is well known : overheating
+1015,HT-1020,100000015,US,2017-01-17,Bad display,Review: Worst display.. fonts are blurry.. best part is help less amazon care. saying that there is no return policy..
+1016,HT-1030,100000016,CA,2017-01-18,Broke after 2 months,Review: It has been just 2 months and the device has already stopped functioning. It doesnt turn on. I need a replacement. I am very angry and disappointed.
+1017,HT-1007,100000017,DE,2017-01-19,Great as usual,Review: Ipad..nothing to say. I have been using it since last 4 months.
+1018,HT-1040,100000018,US,2017-01-20,Fake product,Review: Fake Product. received A device Without Serial number. unable To Claim Warranty.
+1019,HT-1040,100000019,CA,2017-01-21,Bad Quality,Review: Pathetic product. Below standard quality.
+1020,HT-1011,100000000,US,2017-04-28,Bad battery,Review: Works as expected but battery is a nightmare. This is the worst I ever had. Do not forget your power cable otherwise you cannot use it.
+1021,HT-1011,100000014,DE,2017-05-07,retuned after 3 months,Had to return the device already after 3 months as the battery could not be recharged. I am very disappointed!!!!
+1022,HT-1011,100000023,DE,2017-05-18,Bad battery,Review: Do not buy the battery lifetime is unexceptable bad!!!
+1023,HT-1011,100000025,CA,2017-06-09,,
+1024,HT-1011,100000013,CA,2017-08-08,Battery Lifetime too short,Should consider exchanging the battery. The lifetime is very bad and far too short.
+1025,HT-1011,100000005,DE,2017-08-23,Battery is a nogo,Review: Battery is already empty after 1 hour!!! This laptop is absolutally useless.
+1026,HT-1030,100000016,CA,2017-12-01,Immediate replacement,Review: I need to update my previous review. The display was replaced immedeatley by Amazon and with the new display I have no problems any more. Very good service and display!
