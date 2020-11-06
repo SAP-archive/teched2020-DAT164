@@ -1,4 +1,4 @@
-# DAT164 - Create Data Flows Covering Both SAP and Non-SAP Using SAP Data Intelligence
+# DAT164 - Create Data Flows Covering Both SAP and Non-SAP Using SAP Data Intelligence 3.1
 
 ## Description
 
