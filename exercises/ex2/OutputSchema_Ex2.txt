@@ -1,0 +1,61 @@
+[
+	{
+		"name": "PRODUCTID",
+		"class": "string",
+		"size": 128
+	},
+	{
+		"name": "CATEGORY",
+		"class": "string",
+		"size": 128
+	},
+	{
+		"name": "CREATEDATE",
+		"class": "date"
+	},
+	{
+		"name": "CHANGEDATE",
+		"class": "date"
+	},
+	{
+		"name": "PRODUCTNAME",
+		"class": "string",
+		"size": 128
+	},
+	{
+		"name": "PRODUCTDESC",
+		"class": "string",
+		"size": 512
+	},
+	{
+		"name": "PRICE",
+		"class": "number"
+	},
+	{
+		"name": "REVIEW_ID",
+		"class": "integer"
+	},
+	{
+		"name": "CUSTOMER_ID",
+		"class": "integer"
+	},
+	{
+		"name": "COUNTRY",
+		"class": "string",
+		"size": 128
+	},
+	{
+		"name": "REVIEW_DATE",
+		"class": "date"
+	},
+	{
+		"name": "REVIEW_TITLE",
+		"class": "string",
+		"size": 128
+	},
+	{
+		"name": "REVIEW_TEXT",
+		"class": "string",
+		"size": 1028
+	}
+]
