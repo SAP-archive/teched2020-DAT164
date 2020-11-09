@@ -52,7 +52,7 @@ In order to utilize SAP Data Intelligence to push data into SAP Analytics Cloud 
 9. Select the <b>SAP Analytics Cloud Formatter</b> operator and open its configuration settings
 <br>![](./images/Ex2_12.png)
 
-10. Go to the <b> Tenant </b> description and insert the URL <b> https://ai-sandbox.eu10.sapan<alytics.cloud/sap/fpa/ui/app.html#;view_id=home </b>
+10. Go to the <b> Tenant </b> description and insert the URL <b> https://ai-sandbox.eu10.sapanalytics.cloud/sap/fpa/ui/app.html#;view_id=home </b>
 <br>![](./images/Ex2_13.png)
 
 11. Go to the <b> Dataset Name </b> description and choose the name <b> TAXY_Product_Reviews </b>. Please note that XY refers to your assigned participation number
@@ -64,7 +64,7 @@ In order to utilize SAP Data Intelligence to push data into SAP Analytics Cloud 
 13. Right now, a window will be popping up. Switch to the option <b> JSON </b> and delete the existing brackets in the editor
 <br>![](./images/Ex2_16.png)
  
-14. Open the text file [](/ex2/OutputSchema_Ex2.txt). Copy and paste the entire JSON format to the <b> Output Schema editor </b> and click <b> Save </b>
+14. Open the following <a href="url">text file</a>. Copy and paste the entire JSON format to the <b> Output Schema editor </b> and click <b> Save </b>
 <br>![](./images/Ex2_17.png)
 
 15. Select the <b>SAP Analytics Cloud Producer</b> operator and open its configuration settings
