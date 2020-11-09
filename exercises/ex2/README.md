@@ -64,7 +64,7 @@ In order to utilize SAP Data Intelligence to push data into SAP Analytics Cloud 
 13. Right now, a window will be popping up. Switch to the option <b> JSON </b> and delete the existing brackets in the editor
 <br>![](./images/Ex2_16.png)
  
-14. Open the following <a href="url">text file</a>. Copy and paste the entire JSON format to the <b> Output Schema editor </b> and click <b> Save </b>
+14. Open the following <a href="https://github.com/SAP-samples/teched2020-DAT164/blob/master/exercises/ex2/OutputSchema_Ex2.txt">text file</a>. Copy and paste the entire JSON format to the <b> Output Schema editor </b> and click <b> Save </b>
 <br>![](./images/Ex2_17.png)
 
 15. Select the <b>SAP Analytics Cloud Producer</b> operator and open its configuration settings
