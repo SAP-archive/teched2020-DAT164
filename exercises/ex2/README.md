@@ -9,10 +9,10 @@ As a matter of fact, you do not need to start building your data pipelines from 
 1. Open the modeler application of SAP Data Intelligence. In the screenshot below we assume that we are located in the SAP Data Intelligence launchpad
 <br>![](./images/Ex2_0.png)
 
-2. Select the tab <br>graph</br> on the left-hand side
+2. Select the tab graph on the left-hand side
 <br>![](./images/Ex2_1.png)
 
-3. Search for <br> SAC </br> (SAC is the officially approved abbreviation for the solution SAP Analytics Cloud) and click on the graph <br> Push data to SAC </br>
+3. Search for SAC (SAC is the officially approved abbreviation for the solution SAP Analytics Cloud) and click on the graph Push data to SAC
 <br>![](./images/Ex2_2.png)
 
 4. You will immediately see the pipeline template which we will be using to push our result set to SAP Analytics Cloud
