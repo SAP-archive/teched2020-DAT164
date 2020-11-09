@@ -12,7 +12,7 @@ As a matter of fact, you do not need to start building your data pipelines from 
 2. Select the tab <b>graph</b> on the left-hand side
 <br>![](./images/Ex2_1.png)
 
-3. Search for <b>SAC</b> (SAC is the officially approved abbreviation for the solution SAP Analytics Cloud) and click on the graph <b>Push data to SAC</b>
+3. Search for <b>SAC</b> (SAC is the officially approved abbreviation for the solution SAP Analytics Cloud) and click on the graph <b>Push to SAC</b>
 <br>![](./images/Ex2_2.png)
 
 4. You will immediately see the pipeline template which we will be using to push our result set to SAP Analytics Cloud
