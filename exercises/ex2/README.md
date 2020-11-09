@@ -61,10 +61,10 @@ In order to utilize SAP Data Intelligence to push data into SAP Analytics Cloud 
 12. Set the flag of the area <b> Input Contains Column Headings </b> to be <b> False </b> and select the option to manually adapt the <b> Output Schema </b>
 <br>![](./images/Ex2_15.png)
 
-13. Right now, a window will be popping up. Switch to the option <br> JSON </br> and delete the existing brackets in the editor
+13. Right now, a window will be popping up. Switch to the option <b> JSON </b> and delete the existing brackets in the editor
 <br>![](./images/Ex2_16.png)
  
-14. Open the text file ![](/ex2/OutputSchema_Ex2.txt). Copy and paste the entire JSON format to the <b> Output Schema editor </b> and click <b> Save </b>
+14. Open the text file [](/ex2/OutputSchema_Ex2.txt). Copy and paste the entire JSON format to the <b> Output Schema editor </b> and click <b> Save </b>
 <br>![](./images/Ex2_17.png)
 
 15. Select the <b>SAP Analytics Cloud Producer</b> operator and open its configuration settings
