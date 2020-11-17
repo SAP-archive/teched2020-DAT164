@@ -26,7 +26,7 @@ In this exercise we are going to use the chosen pipeline template as a basis to 
 In order to utilize SAP Data Intelligence to push data into SAP Analytics Cloud it is mandatory to enable dedicated API access on SAP Analytics Cloud side. For this, it is needed to add a new OAuth Client in the App Integration section of the SAP Analytics Cloud System Administration (of course, you need to have the necessary privileges on SAP Analytics Cloud side to create such a new OAuth Client). For the matter of this exercise, such an OAuth client has already been added in the SAP Analytics Cloud instance that we are going to use throughout this workbook and we will make use of the related information in SAP Data Intelligence at a given point in time below.
 
 1. Select the <b>Read File</b> operator and open its configuration settings
-<br>![](.images/Ex2_4.png)
+<br>![](./images/Ex2_4.png)
 
 2. Go to the <b> Connection </b> tab and open it
 <br>![](./images/Ex2_5.png)
