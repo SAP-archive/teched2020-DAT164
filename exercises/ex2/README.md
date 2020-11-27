@@ -18,6 +18,13 @@ As a matter of fact, you do not need to start building your data pipelines from 
 4. You will immediately see the pipeline template which we will be using to push our result set to SAP Analytics Cloud
 <br>![](./images/Ex2_3.png)
 
+5. In the further course of this exercise we will use this template as a basis for accomplishing the push operation to SAP Analytics Cloud. As we do not want to overwrite the existing template we are going to duplicate it and give it another name. For this, we click on the disk button as highlighted on the screenshot and choose the option <b>Save As</b>
+<br>![](./images/Ex2_3_1.png)
+
+6. Now, you can go ahead and specify the names as suggested in the screenshot below. Click <b> OK <b> to save the pipeline
+<br>![](./images/Ex2_3_2.png)
+
+
 We have now completed Exercise 2.1 and will move on to Exercise 2.2.
 
 # Exercise 2.2 - Push the result set to SAP Analytics Cloud
