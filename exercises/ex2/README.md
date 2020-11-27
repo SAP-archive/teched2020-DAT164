@@ -77,8 +77,14 @@ In order to utilize SAP Data Intelligence to push data into SAP Analytics Cloud 
 15. Select the <b>SAP Analytics Cloud Producer</b> operator and open its configuration settings
 <br>![](./images/Ex2_18.png)
 
-16. S
-
+16. Insert the relevant information as shown in the screenshot below. Precisely:
+<br> <b> host: </b> ai-sandbox.eu10.sapanalytics.cloud
+<br> <b> oauth2TokenUrl: </b> https://ai-sandbox.authentication.eu10.hana.ondemand.com/oauth/token
+<br> <b> oauth2AuthUrl: </b> https://ai-sandbox.authentication.eu10.hana.ondemand.com/oauth/authorize
+<br> <b> oauth2ClientId: </b> sb-a07f1352-64c8-452d-94af-c992a3c69319!b50794|client!b3650
+<br> <b> oauth2ClientSecret: </b> P/GKhBm+OnsW9ADyDmzz/FJZ3vY= 
+<br> For the remaining configuration settings, everything can remain as is
+<br>![](./images/Ex2_21.png)
 
 
 2.	Insert this line of code.
