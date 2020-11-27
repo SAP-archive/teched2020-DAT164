@@ -1,6 +1,6 @@
-# Exercise 4 - Update Data in SAC
+# Exercise 4 - Enrich the existing Product Data Set in SAP Analytics Cloud with the results derived by the applied Sentiment Analysis
 
-In this exercise, we will create...
+In this exercise, we will 
 
 ## Exercise 2.1 Sub Exercise 1 Description
 
