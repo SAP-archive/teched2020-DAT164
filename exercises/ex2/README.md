@@ -55,13 +55,13 @@ In order to utilize SAP Data Intelligence to push data into SAP Analytics Cloud 
 10. Go to the <b> Tenant </b> description and insert the URL <b> https://di-sac-teched2020.eu10.hcs.cloud.sap/sap/fpa/ui/app.html#;view_id=home  </b>
 <br>![](./images/Ex2_13.png)
 
-11. Go to the <b> Dataset Name </b> description and choose the name <b> TAXY_Product_Reviews </b>. Please note that XY refers to your assigned participation number
+11. Go to the <b> Dataset Name </b> description and choose the name <b> Product_Reviews_TAXY </b>. Please note that XY refers to your assigned participation number
 <br>![](./images/Ex2_14.png)
 
 12. Set the flag of the area <b> Input Contains Column Headings </b> to be <b> False </b> and select the option to manually adapt the <b> Output Schema </b>
 <br>![](./images/Ex2_15.png)
 
-13. Right now, a window will be popping up. Switch to the option <b> JSON </b> and delete the existing brackets in the editor
+13. Right now, a window will be popping up. Make yourself familiar with the provided UI that you can use in order to specify the attributes together with the associated data types. For our matter we will switch to the option <b> JSON </b> and delete the existing brackets in the editor. 
 <br>![](./images/Ex2_16.png)
  
 14. Open the following <a href="https://github.com/SAP-samples/teched2020-DAT164/blob/master/exercises/ex2/OutputSchema_Ex2.txt">text file</a>. Copy and paste the entire JSON format to the <b> Output Schema editor </b> and click <b> Save </b>
