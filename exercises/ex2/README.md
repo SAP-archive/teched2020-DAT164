@@ -86,6 +86,8 @@ In order to utilize SAP Data Intelligence to push data into SAP Analytics Cloud 
 <br> For the remaining configuration settings, everything can remain as is
 <br>![](./images/Ex2_21.png)
 
+17. Right now, you can save the pipeline and execute it accordingly
+<br>![](./images/Ex2_22.png)
 
 2.	Insert this line of code.
 ```abap
