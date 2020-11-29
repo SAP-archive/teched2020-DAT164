@@ -8,7 +8,10 @@ As a matter of fact, we can re-use the pipelines that have been created in both 
 
 1. Create a new graph by clicking on the associated icon
 <br>![](./images/Ex4_1.png)
-2.
+2. Once the new graph is appearing we immediately change its name by clicking on <b> Save </b>
+<br>![](./images/Ex4_2.png)
+3. Specify both the name of the graph as well as the description of the graph as highlighted in the screeenshot below
+<br>![](./images/Ex4_3.png)
 
 ## Summary
 Congratulations! You have finished the entire exercises! We hope you have enjoyed them!
