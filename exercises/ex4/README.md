@@ -6,7 +6,9 @@ In this exercise, we are going to push the Product Dataset enriched with the Sen
 
 As a matter of fact, we can re-use the pipelines that have been created in both exercise 2 and exercise 3. We can just simply copy both graphs and connect them accordingly. As the last step we merely need to pay attention to the additional two new columns <b> Polarity </b> and <b> Subjectivity </b> that were derived in the context of the applied sentiment analysis done in [Exercise 3](../ex3/README.md).
 
-1. Create a new 
+1. Create a new graph by clicking on the associated icon
+<br>![](./images/Ex4_1.png)
+2.
 
 ## Summary
 Congratulations! You have finished the entire exercises! We hope you have enjoyed them!
