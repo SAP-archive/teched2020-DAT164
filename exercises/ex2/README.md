@@ -95,6 +95,6 @@ In order to utilize SAP Data Intelligence to push data into SAP Analytics Cloud 
 ## Summary
 
 Congratulations! You managed to push an existing dataset to SAP Analytics Cloud, i.e. to create a  SAP Analytics Cloud dataset that itself could be used to create powerful visualizations and to derive interesting insights in the datset, respectively.
-As the next step we will be leveraging SAP Data Intelligence capabilities to create a sentiment analysis on the dataset. This will help in getting a better understanding on the populated product reviews that have been combined with the product master data (see Exercise 1 of the current project).
+As the next step we will be leveraging SAP Data Intelligence capabilities to create a sentiment analysis on the dataset. This will help in getting a better understanding on the populated product reviews that have been combined with the product master data (see [Exercise 1](../ex1/README.md) of the current project).
 Please proceed with jumping to [Exercise 3](../ex3/README.md)
 
