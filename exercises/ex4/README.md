@@ -9,4 +9,4 @@ As a matter of fact, we can re-use the pipelines that have been created in both 
 1. Create a new 
 
 ## Summary
-Congratulations! You have finished the entire exercise! We hope you enjoyed it!
+Congratulations! You have finished the entire exercises! We hope you have enjoyed them!
