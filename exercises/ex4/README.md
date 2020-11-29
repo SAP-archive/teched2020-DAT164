@@ -17,9 +17,9 @@ We do not need to start from scratch to push the result set of the applied Senti
 <br>![](./images/Ex4_4.png)
 5. Now, we copy the entire graph. For doing so, just press <b> Shift </b> and hover your mouse over the entire pipeline. Please make sure that you cover all the areas of your graph (including the Python Operator group assigning the correct dockerfile tag). Do not forget to use <b> STRG + C </b> to copy the marked pipeline.
 <br>![](./images/Ex4_5.png)
-6. At this point, we proceed with copying the pipeline taking care of pushing data to SAP Analytics Cloud from [Exercise 2](../ex2/README.md).For this you simply jump to the respective pipeline in case that it is still open in the Modeler application. If not, you can search for it by inserting the term <b> [DAT164] </b> in the search bar on the left side of the modeler application. Select the mentioned pipeline once you have identified it.
+6. Now, just paste the entire pipeline into the empty pipeline that you have previously created in the present exercise. At this point, we proceed with further copying and pasting the pipeline taking care of pushing data to SAP Analytics Cloud from [Exercise 2](../ex2/README.md) into the present pipeline.For this you simply jump to the respective pipeline in case that it is still open in the Modeler application. If not, you can search for it by inserting the term <b> [DAT164] </b> in the search bar on the left side of the modeler application. Select the mentioned pipeline once you have identified it.
 <br>![](./images/Ex4_6.png)
-5. Now, we copy the entire graph. For doing so, you can exactly proceed as done in step 5 from above: just press <b> Shift </b> and hover your mouse over the entire pipeline. Please make sure that you cover all the areas of your graph. Do not forget to use <b> STRG + C </b> to copy the marked pipeline.
+7. Now, we copy the entire graph. For doing so, you can exactly proceed as done in step 5 from above: just press <b> Shift </b> and hover your mouse over the entire pipeline. Please make sure that you cover all the areas of your graph. Do not forget to use <b> STRG + C </b> to copy the marked pipeline.
 <br>![](./images/Ex4_7.png)
 ## Summary
 Congratulations! You have finished the entire exercises! We hope you have enjoyed them!
