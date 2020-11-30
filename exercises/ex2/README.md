@@ -89,7 +89,22 @@ In order to utilize SAP Data Intelligence to push data into SAP Analytics Cloud 
 17. Right now, you can save the pipeline and execute it accordingly
 <br>![](./images/Ex2_22.png)
 
-18. SAC (!!!!)
+18. Once the graph is running we do select the SAP Analytics Cloud Producer Operator. Now, right-click on it to open the UI 
+<br>![](./images/Ex2_23.png)
+
+19. This take you to the location as seen below. Click on the link which will grant authorization.
+<br>![](./images/Ex2_25.png)
+
+20. As soon as permission is granted you can take a look at the Access Token
+<br>![](./images/Ex2_24.png)
+
+21. Now, you should stop the running pipeline
+<br>![](./images/Ex2_26.png)
+
+22. Once the execution is stopped, the pipeline execution status will be shown as completed. Now, we re-start the pipeline and check the Wiretap Operator UI once more
+<br>![](./images/Ex2_27.png)
+
+23. You will notice two API responses being of status 200. These indicate that the Push Operation has been successfully accomplished.
 
 
 ## Summary
