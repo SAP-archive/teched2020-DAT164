@@ -23,11 +23,11 @@ The requirements to follow the exercises in this repository are:
 
 ## Exercises
 
-- [Getting Started](exercises/ex0_getting_started/)
-- [Exercise 1 - Combine Reviews and Master Data](exercises/ex1_combine_reviews_and_master_data/)
-- [Exercise 2 - Push Data to SAC](exercises/ex2_push_data_to_sac/)
-- [Exercise 3 - Extend Reviews with Sentiment Scores](exercises/ex3_extend_reviews_with_sentiment_scores/)
-- [Exercise 4 - Update Data in SAC](exercises/ex4_update_data_in_sac/)
+- [Getting Started](exercises/ex0/)
+- [Exercise 1 - Combine Reviews and Master Data](exercises/ex1/)
+- [Exercise 2 - Push Data to SAC](exercises/ex2/)
+- [Exercise 3 - Extend Reviews with Sentiment Scores](exercises/ex3/)
+- [Exercise 4 - Update Data in SAC](exercises/ex4/)
 
 ## How to obtain support
 
