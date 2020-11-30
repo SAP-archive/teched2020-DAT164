@@ -44,5 +44,9 @@ Right now, we have created the final pipeline that is pushing the enriched produ
 <br>![](./images/Ex4_16.png)
 17. At this point we have made all the changes that are required and are good to go. Next, we click on <b> Save </b> and execute the pipeline.
 <br>![](./images/Ex4_17.png)
+18. Let us right-click on the SAP Analytics Cloud Producer Operator to take a look at the UI
+<br>![](./images/Ex4_18.png)
+19. We realize that the
+<br>![](./images/Ex4_20.png)
 ## Summary
 Congratulations! You have finished the entire exercises! We hope you have enjoyed them!
