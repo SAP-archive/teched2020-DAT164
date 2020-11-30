@@ -11,8 +11,10 @@ As a matter of fact, we can re-use the pipelines that have been created in both 
 2. Once the new graph is appearing we immediately change its name by clicking on <b> Save </b>
 <br>![](./images/Ex4_2.png)
 3. Specify both the name of the graph as well as the description of the graph as highlighted in the screeenshot below
-<br>![](./images/Ex4_3.png)<br>
-We do not need to start from scratch to push the result set of the applied Sentiment Analysis to SAP Analytics Cloud. For this matter we just combine the graphs created in [Exercise 2](../ex2/README.md) as well as [Exercise 3](../ex3/README.md)<br>
+<br>![](./images/Ex4_3.png)
+<br>
+We do not need to start from scratch to push the result set of the applied Sentiment Analysis to SAP Analytics Cloud. For this matter we just combine the graphs created in [Exercise 2](../ex2/README.md) as well as [Exercise 3](../ex3/README.md)
+<br><br>
 4. We start with taking a look into the Sentiment Analysis Pipeline from [Exercise 3](../ex3/README.md).For this you simply jump to the respective pipeline in case that it is still open in the Modeler application. If not, you can search for it by inserting the term <b> [DAT164] </b> in the search bar on the left side of the modeler application. Select the mentioned pipeline once you have identified it.
 <br>![](./images/Ex4_4.png)
 5. Now, we copy the entire graph. For doing so, just press <b> Shift </b> and hover your mouse over the entire pipeline. Please make sure that you cover all the areas of your graph (including the Python Operator group assigning the correct dockerfile tag). Do not forget to really copy the marked pipeline.
