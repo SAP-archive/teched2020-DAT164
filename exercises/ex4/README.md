@@ -34,8 +34,15 @@ We do not need to start from scratch to push the result set of the applied Senti
 <br>
 Right now, we have created the final pipeline that is pushing the enriched product dataset <b> including </b> the applied Sentiment Analysis to SAP Analytics Cloud for the purpose of doing advanced analytics. It was less effort to create this final pipeline as we could re-use the work we have done in all the exercises that took place before. However, we are not yet ready to initiate the push operation to SAP Analytics Cloud as we need to pay attention to the slightly changed dataset structure (two new additional attributes with <b>Polarity</b> and <b>Subjectivity</b> have been established as a result of the applied Sentiment Analysis)
 <br><br>
-13. 
-
-
+13. Select the SAP Analytics Cloud Formatter Operator and access the <b>Output Schema</b> in the Configurations area. 
+<br>![](./images/Ex4_13.png)
+14. Clicking on the <b> + </b>-icon we can simply add the two additional attributes <b> Polarity </b> as well as <b> Subjectivity </b> to the Output Schema. 
+<br>![](./images/Ex4_14.png)
+15. We start adding the column <b> Polarity </b> having the datatype <b> number </b> 
+<br>![](./images/Ex4_15.png)
+16. As the next step, we do add the column <b> Subjectivity </b> having the datatype <b> number </b>.Click <b> Save </b>
+<br>![](./images/Ex4_16.png)
+17. At this point we have made all the changes that are required and are good to go. Next, we click on <b> Save </b> and execute the pipeline.
+<br>![](./images/Ex4_17.png)
 ## Summary
 Congratulations! You have finished the entire exercises! We hope you have enjoyed them!
