@@ -33,7 +33,7 @@ We do not need to start from scratch to push the result set of the applied Senti
 <br>![](./images/Ex4_12.png)
 <br>
 Right now, we have created the final pipeline that is pushing the enriched product dataset <b> including </b> the applied Sentiment Analysis to SAP Analytics Cloud for the purpose of doing advanced analytics. It was less effort to create this final pipeline as we could re-use the work we have done in all the exercises that took place before. However, we are not yet ready to initiate the push operation to SAP Analytics Cloud as we need to pay attention to the slightly changed dataset structure (two new additional attributes with POLARITY and SUBJECTIVITY have been established as a result of the applied Sentiment Analysis)
-<br>
+<br><br>
 13. 
 
 
