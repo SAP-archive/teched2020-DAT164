@@ -46,7 +46,11 @@ Right now, we have created the final pipeline that is pushing the enriched produ
 <br>![](./images/Ex4_17.png)
 18. Let us right-click on the SAP Analytics Cloud Producer Operator to take a look at the UI
 <br>![](./images/Ex4_18.png)
-19. We realize that the
+19. We realize that permission is already granted (due to the fact that the initial permission has been granted in [Exercise 2](../ex2/README.md).You can take a look at the Access Token
 <br>![](./images/Ex4_20.png)
+20. Go ahead and open the UI of the Wiretap Operator
+<br>![](./images/Ex4_21.png)
+21. As already seen in [Exercise 2](../ex2/README.md) we are going to notice that there are two API responses highlighted being of status 200. This means that the Push operation to SAP Analytics Cloud has been successfully accomplished
+<br>![](./images/Ex4_22.png) (tbd!!)
 ## Summary
 Congratulations! You have finished the entire exercises! We hope you have enjoyed them!
