@@ -1,10 +1,17 @@
 # Getting Started
 
-In this exercise, you will work with a central SAP Data Intelligence tenant.
+Throughout all the exercises compiled in this repository, you will work with a central SAP Data Intelligence tenant.
 
 ## Login
 
-The users will be shared with you up front...
+You will be assigned a number at the beginning of the workshop.<br>
+<br>
+Tenant: dat164 <br>
+Username: TAXY where XY is your assigned number<br>
+<br>
+Logon URL: https://<hyperlink_goes_here>
+
+
 
 Go to the URL:
 
