@@ -9,7 +9,7 @@ You will be provided with a participant number at the beginning of the workshop.
 Tenant: `DAT164` <br>
 Username: `TAXY` where XY is your assigned number<br>
 <br>
-Logon URL: https://<hyperlink_goes_here> <br> 
+Logon URL: <a href="https://vsystem.ingress.dh-wvsozbfum.dh-canary.shoot.live.k8s-hana.ondemand.com/login/?redirectUrl=%2Fapp%2Fdatahub-app-launchpad%2F&tenant=DAT164">SAP Data Intellligence </a><br> 
 <br>
 <br>![](./images/002_login_2.png)
 
