@@ -1,4 +1,4 @@
-# Exercise 4 - Enrich the existing Product Dataset in SAP Analytics Cloud with the results derived by the applied Sentiment Analysis
+# Exercise 4 - Push Extended Dataset to SAP Analytics Cloud
 
 In this exercise, we are going to push the Product Dataset enriched with the Sentiment Analysis done in [Exercise 3](../ex3/README.md) to SAP Analytics Cloud. As already experienced in [Exercise 2](../ex2/README.md)  we will create a new SAP Analytics Cloud dataset which itself can be utilized to apply methodologies from the area of advanced analytics provided by SAP Analytics Cloud.
 
