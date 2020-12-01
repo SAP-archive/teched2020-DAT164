@@ -11,7 +11,7 @@ Username: `TAXY` where XY is your assigned number<br>
 <br>
 Logon URL: https://<hyperlink_goes_here> <br>
 <br>
-<br>![](./images/Ex2_0.png)
+<br>![](./images/002_login_2.png)
 
 ## Summary
 
