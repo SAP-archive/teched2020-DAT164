@@ -15,5 +15,4 @@ Logon URL: <a href="https://vsystem.ingress.dh-wvsozbfum.dh-canary.shoot.live.k8
 
 ## Summary
 
-Now that you have ... 
-Continue to - [Exercise 1 - Exercise 1 Description](../ex1/README.md)
+Congratulations! You are perfectly set for proceeding with the upcoming exercises. For this matter, please get started with [Exercise 1 - Exercise 1 Description](../ex1/README.md)
