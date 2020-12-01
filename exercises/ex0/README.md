@@ -4,10 +4,10 @@ Throughout all the exercises compiled in this repository, you will work with a c
 
 ## Logging on to SAP Data Intelligence
 
-You will be provided with a participant number at the beginning of the workshop.<br>
+You will be provided with both a participant number and the associated password at the very beginning of the workshop.<br>
 <br>
 Tenant: `DAT164` <br>
-Username: `TAXY` where XY is your assigned number<br>
+Username: `TAXY` where XY is your assigned participant number<br>
 <br>
 Logon URL: <a href="https://vsystem.ingress.dh-wvsozbfum.dh-canary.shoot.live.k8s-hana.ondemand.com/login/?redirectUrl=%2Fapp%2Fdatahub-app-launchpad%2F&tenant=DAT164">SAP Data Intellligence </a><br> 
 <br>
