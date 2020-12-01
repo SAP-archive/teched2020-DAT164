@@ -4,7 +4,7 @@ Throughout all the exercises compiled in this repository, you will work with a c
 
 ## Login
 
-You will be assigned a number at the beginning of the workshop.<br>
+You will be provided with a participant number at the beginning of the workshop.<br>
 <br>
 Tenant: `dat164` <br>
 Username: `TAXY` where XY is your assigned number<br>
