@@ -9,7 +9,9 @@ You will be provided with a participant number at the beginning of the workshop.
 Tenant: `dat164` <br>
 Username: `TAXY` where XY is your assigned number<br>
 <br>
-Logon URL: https://<hyperlink_goes_here>
+Logon URL: https://<hyperlink_goes_here> <br>
+<br>
+<br>![](./images/Ex2_0.png)
 
 ## Summary
 
