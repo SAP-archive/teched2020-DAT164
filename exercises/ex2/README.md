@@ -2,7 +2,7 @@
 
 In this exercise, we will go ahead and push the created result set from exercise 1 to SAP Analytics Cloud. From a technical perspective we will create an SAP Analytics Cloud dataset which itself can be utilized to apply methodologies from the area of advanced analytics provided by SAP Analytics Cloud.
 
-# Exercise 2.1 - Choose the right pipeline template 
+## Exercise 2.1 - Choose the right pipeline template 
 
 As a matter of fact, you do not need to start building your data pipelines from scratch in SAP Data Intelligence. SAP Data Intelligence provides pipeline templates that can be utilized to quickly accomplish common data-driven scenarios. In this sub-exercise we choose that pipeline template that shows how to push files to SAP Analytics Cloud via SAP Data Intelligence pipelines.
 
@@ -27,7 +27,7 @@ As a matter of fact, you do not need to start building your data pipelines from 
 
 We have now completed Exercise 2.1 and will move on to Exercise 2.2.
 
-# Exercise 2.2 - Push the result set to SAP Analytics Cloud
+## Exercise 2.2 - Push the result set to SAP Analytics Cloud
 
 In this exercise we are going to use the chosen pipeline template as a basis to push our created result set from Exercise 1 to SAP Analytics Cloud. For this purpose we will be specifying the needed operator configurations.
 In order to utilize SAP Data Intelligence to push data into SAP Analytics Cloud it is mandatory to enable dedicated API access on SAP Analytics Cloud side. For this, it is needed to add a new OAuth Client in the App Integration section of the SAP Analytics Cloud System Administration (of course, you need to have the necessary privileges on SAP Analytics Cloud side to create such a new OAuth Client). For the matter of this exercise, such an OAuth client has already been added in the SAP Analytics Cloud instance that we are going to use throughout this workbook and we will make use of the related information in SAP Data Intelligence at a given point in time below.
