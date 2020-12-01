@@ -6,7 +6,7 @@ Throughout all the exercises compiled in this repository, you will work with a c
 
 You will be provided with a participant number at the beginning of the workshop.<br>
 <br>
-Tenant: `dat164` <br>
+Tenant: `DAT164` <br>
 Username: `TAXY` where XY is your assigned number<br>
 <br>
 Logon URL: https://<hyperlink_goes_here> <br>
