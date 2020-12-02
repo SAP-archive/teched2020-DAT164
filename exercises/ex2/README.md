@@ -105,6 +105,7 @@ In order to utilize SAP Data Intelligence to push data into SAP Analytics Cloud 
 <br>![](./images/Ex2_27.png)
 
 23. You will notice two API responses being of status 200. These indicate that the Push Operation has been successfully accomplished.
+<br>![](./images/Ex2_28.png)
 
 
 ## Summary
