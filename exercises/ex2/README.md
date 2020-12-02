@@ -59,8 +59,8 @@ In order to utilize SAP Data Intelligence to push data into SAP Analytics Cloud 
 9. Select the <b>SAP Analytics Cloud Formatter</b> operator and open its configuration settings
 <br>![](./images/Ex2_12.png)
 
-10. Go to the <b> Tenant </b> description and insert the URL <b> https://di-sac-teched2020.eu10.hcs.cloud.sap/sap/fpa/ui/app.html#;view_id=home  </b>
-<br>![](./images/Ex2_13.png)
+10. Go to the <b> Tenant </b> description and insert the tenant information <b> 9AD52 </b>. In SAP Analytics Cloud, you can extract this information by taking a look into system information
+(tbd!!!)
 
 11. Go to the <b> Dataset Name </b> description and choose the name <b> Product_Reviews_TAXY </b>. Please note that XY refers to your assigned participation number
 <br>![](./images/Ex2_14.png)
