@@ -62,7 +62,7 @@ In order to utilize SAP Data Intelligence to push data into SAP Analytics Cloud 
 10. Go to the <b> Tenant </b> description and insert the tenant information <b> 9AD52 </b>. In SAP Analytics Cloud, you can extract this information by taking a look into system information
 <br>![](./images/Ex2_13.png)
 
-11. Go to the <b> Dataset Name </b> description and choose the name <b> Product_Reviews_TAXY </b>. Please note that XY refers to your assigned participation number
+11. Go to the <b> Dataset Name </b> description and choose the name <b> TAXY_Product_Reviews </b>. Please note that XY refers to your previously assigned participation number
 <br>![](./images/Ex2_14.png)
 
 12. Set the flag of the area <b> Input Contains Column Headings </b> to be <b> False </b> and select the option to manually adapt the <b> Output Schema </b>
@@ -78,11 +78,11 @@ In order to utilize SAP Data Intelligence to push data into SAP Analytics Cloud 
 <br>![](./images/Ex2_18.png)
 
 16. Insert the relevant information as shown in the screenshot below. Precisely:
-<br> <b> host: </b> ai-sandbox.eu10.sapanalytics.cloud
-<br> <b> oauth2TokenUrl: </b> https://ai-sandbox.authentication.eu10.hana.ondemand.com/oauth/token
-<br> <b> oauth2AuthUrl: </b> https://ai-sandbox.authentication.eu10.hana.ondemand.com/oauth/authorize
-<br> <b> oauth2ClientId: </b> sb-a07f1352-64c8-452d-94af-c992a3c69319!b50794|client!b3650
-<br> <b> oauth2ClientSecret: </b> P/GKhBm+OnsW9ADyDmzz/FJZ3vY= 
+<br> <b> host: </b> di-sac-teched2020.eu10.hcs.cloud.sap
+<br> <b> oauth2TokenUrl: </b> https://di-sac-teched2020.authentication.eu10.hana.ondemand.com/oauth/token
+<br> <b> oauth2AuthUrl: </b> https://di-sac-teched2020.authentication.eu10.hana.ondemand.com/oauth/authorize
+<br> <b> oauth2ClientId: </b> sb-bbebe653-976e-4202-bc63-1ea71e8ec735!b67304|client!b3650
+<br> <b> oauth2ClientSecret: </b> eqqLt8NLBi4J1rpTee3GSmo0LyM= 
 <br> For the remaining configuration settings, everything can remain as is
 <br>![](./images/Ex2_21.png)
 
