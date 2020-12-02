@@ -51,7 +51,7 @@ Right now, we have created the final pipeline that is pushing the enriched produ
 20. Go ahead and open the UI of the Wiretap Operator
 <br>![](./images/Ex4_21.png)
 21. As already seen in [Exercise 2](../ex2/README.md), Step 22, we are going to notice that there are two API responses highlighted being of status 200. This means that the Push operation to SAP Analytics Cloud has been successfully accomplished
-<br>![](./images/Ex4_22.png) (tbd!!)
+<br>![](./images/Ex4_22.png)
 
 ## Summary
 Congratulations! You have finished the entire exercises! We hope you have enjoyed them!
