@@ -53,7 +53,7 @@ In order to utilize SAP Data Intelligence to push data into SAP Analytics Cloud 
 7. Select the <b>Decode</b> operator and open its configuration settings
 <br>![](./images/Ex2_10.png)
 
-8. Replace the <b>CSV field delimiter</b> by  `,` and choose <b> Column names </b> in the drop down menu of the <b> CSV header </b> area
+8. Replace the <b>CSV field delimiter</b> by  `,` , set the option <b> CSV lazy quotes </b> to be `false` and choose `Column names` in the drop down menu of the <b> CSV header </b> area
 <br>![](./images/Ex2_11.png)
 
 9. Select the <b>SAP Analytics Cloud Formatter</b> operator and open its configuration settings
