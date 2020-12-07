@@ -23,9 +23,7 @@ Focus is on the following features:
 
 ## Requirements
 
-The requirements to follow the exercises in this repository are:
-
-* None
+No SAP Data Intelligence knowledge is needed to follow this tutorial.
 
 ## Exercises
 
