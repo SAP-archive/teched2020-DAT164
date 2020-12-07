@@ -62,7 +62,7 @@ In order to utilize SAP Data Intelligence to push data into SAP Analytics Cloud 
 10. Go to the <b> Tenant </b> description and insert the tenant information <b> 9AD52 </b>. In SAP Analytics Cloud, you can extract this information by taking a look into system information
 <br>![](./images/Ex2_13.png)
 
-11. Go to the <b> Dataset Name </b> description and choose the name <b> TAXY_Product_Reviews </b>. Please note that XY refers to your previously assigned participation number
+11. Go to the <b> Dataset Name </b> description and choose the name <b> TAXY_Product_Reviews </b>. Please note that XY refers to your pre-assigned participation number
 <br>![](./images/Ex2_14.png)
 
 12. Set the flag of the area <b> Input Contains Column Headings </b> to be <b> False </b> and select the option to manually adapt the <b> Output Schema </b>
