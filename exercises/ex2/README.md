@@ -47,7 +47,7 @@ In order to utilize SAP Data Intelligence to push data into SAP Analytics Cloud 
 5. Now we move forward to the <b> Path </b> tab and open the settings
 <br>![](./images/Ex2_8.png)
 
-6. Open the folder <b> DAT164 </b>, select the file <b> Product_Reviews</b> and click <b> OK </b> 
+6. Select the file <b> Product_Enriched_TAXY</b> and click <b> OK </b>. Please note that XY is referring to your pre-assigned particpant number
 <br>![](./images/Ex2_9.png)
 
 7. Select the <b>Decode</b> operator and open its configuration settings
