@@ -95,6 +95,11 @@ In order to utilize SAP Data Intelligence to push data into SAP Analytics Cloud 
 19. This take you to the location as seen below. Click on the link which will grant authorization.
 <br>![](./images/Ex2_25.png)
 
+20. You will be redirected to the Log On screen below. Please insert the following and click on `Log On` afterwards:
+<br> <b> E-Mail or Use Name: </b> christian.tietz+001@sap.com
+<br> <b> Password: </b> Welcome01
+<br>![](./images/Ex2_29.png)
+
 20. As soon as permission is granted you can take a look at the Access Token
 <br>![](./images/Ex2_24.png)
 
