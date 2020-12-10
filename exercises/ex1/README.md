@@ -179,8 +179,11 @@ data set that have no reviews.
 <br>![](./images/045_left_outer.png)
 <br/>
 
-38. Click the column you want to have in the result. The column will be marked
-by a blue circle.
+38. Click the columns you want to have in the resulting data set. 
+For this exercise, click the columns marked by the blue circles in
+the screenshot. The order of clicking the columns defines the
+column order in the resulting table. Here, please click the columns
+from top to bottom.
 <br>![](./images/046_select_attributes.png)
 <br/>
 
@@ -206,7 +209,7 @@ layouting.
 <br/>
 
 44. In the pipeline view, search for the `Structured File Producer` and drag into the graph.
-<br>![](./images/051_structured file producer.png)
+<br>![](./images/051_structured_file_producer.png)
 <br/>
 
 45. Connect the output of the *Data Transform* operator with the file producer.
@@ -215,12 +218,13 @@ layouting.
 <br/>
 
 47. Configure `S3` as storage type. 
-<br>![](./images/054_s3.png)
-<br/>
+    <br>![](./images/054_s3.png)
+    <br/>
 
-48.Configure `S3` as connection, similar to what was configured for the input. 
-<br>![](./images/055_s3.png)
-<br/>
+48. Configure `S3` as connection
+    similar to what was configured for the input. 
+    <br>![](./images/055_s3.png)
+    <br/>
 
 49. As output path, add the filename 
 <br>![](./images/056_path.png)
@@ -250,7 +254,7 @@ on the top panel.
 
 ## Exercise 1.3: Cleanup and Productize
 
-55. If we want the graph to stop automatically once the data has been consuemd
+55. If we want the graph to stop automatically once the data has been consumed
 we can add a *Graph Terminator* operator. Search for the operator, drag into the graph
 and connect to the output of the file producer.
 <br>![](./images/062_terminator.png)

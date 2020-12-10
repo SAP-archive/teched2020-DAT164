@@ -2,7 +2,7 @@
 
 In this exercise, we will go ahead and push the created result set from exercise 1 to SAP Analytics Cloud. From a technical perspective we will create an SAP Analytics Cloud dataset which itself can be utilized to apply methodologies from the area of advanced analytics provided by SAP Analytics Cloud.
 
-# Exercise 2.1 - Choose the right pipeline template 
+## Exercise 2.1 - Choose the right pipeline template 
 
 As a matter of fact, you do not need to start building your data pipelines from scratch in SAP Data Intelligence. SAP Data Intelligence provides pipeline templates that can be utilized to quickly accomplish common data-driven scenarios. In this sub-exercise we choose that pipeline template that shows how to push files to SAP Analytics Cloud via SAP Data Intelligence pipelines.
 
@@ -27,7 +27,7 @@ As a matter of fact, you do not need to start building your data pipelines from 
 
 We have now completed Exercise 2.1 and will move on to Exercise 2.2.
 
-# Exercise 2.2 - Push the result set to SAP Analytics Cloud
+## Exercise 2.2 - Push the result set to SAP Analytics Cloud
 
 In this exercise we are going to use the chosen pipeline template as a basis to push our created result set from Exercise 1 to SAP Analytics Cloud. For this purpose we will be specifying the needed operator configurations.
 In order to utilize SAP Data Intelligence to push data into SAP Analytics Cloud it is mandatory to enable dedicated API access on SAP Analytics Cloud side. For this, it is needed to add a new OAuth Client in the App Integration section of the SAP Analytics Cloud System Administration (of course, you need to have the necessary privileges on SAP Analytics Cloud side to create such a new OAuth Client). For the matter of this exercise, such an OAuth client has already been added in the SAP Analytics Cloud instance that we are going to use throughout this workbook and we will make use of the related information in SAP Data Intelligence at a given point in time below.
@@ -47,22 +47,22 @@ In order to utilize SAP Data Intelligence to push data into SAP Analytics Cloud 
 5. Now we move forward to the <b> Path </b> tab and open the settings
 <br>![](./images/Ex2_8.png)
 
-6. Open the folder <b> DAT164 </b>, select the file <b> product_reviews_2017_2019.csv </b> and click <b> OK </b> 
+6. Select the file <b> Product_Enriched_TAXY</b> and click <b> OK </b>. Please note that XY is referring to your pre-assigned particpant number
 <br>![](./images/Ex2_9.png)
 
 7. Select the <b>Decode</b> operator and open its configuration settings
 <br>![](./images/Ex2_10.png)
 
-8. Replace the <b>CSV field delimiter</b> by <b> , </b> and choose <b> Column names </b> in the drop down menu of the <b> CSV header </b> area
+8. Replace the <b>CSV field delimiter</b> by  `,` , set the option <b> CSV lazy quotes </b> to be `False` and choose `Column names` in the drop down menu of the <b> CSV header </b> area
 <br>![](./images/Ex2_11.png)
 
 9. Select the <b>SAP Analytics Cloud Formatter</b> operator and open its configuration settings
 <br>![](./images/Ex2_12.png)
 
-10. Go to the <b> Tenant </b> description and insert the URL <b> https://di-sac-teched2020.eu10.hcs.cloud.sap/sap/fpa/ui/app.html#;view_id=home  </b>
+10. Go to the <b> Tenant </b> description and insert the tenant information <b> 9AD52 </b>. In SAP Analytics Cloud, you can extract this information by taking a look into system information
 <br>![](./images/Ex2_13.png)
 
-11. Go to the <b> Dataset Name </b> description and choose the name <b> Product_Reviews_TAXY </b>. Please note that XY refers to your assigned participation number
+11. Go to the <b> Dataset Name </b> description and choose the name <b> TAXY_Product_Reviews </b>. Please note that XY refers to your pre-assigned participation number
 <br>![](./images/Ex2_14.png)
 
 12. Set the flag of the area <b> Input Contains Column Headings </b> to be <b> False </b> and select the option to manually adapt the <b> Output Schema </b>
@@ -78,11 +78,11 @@ In order to utilize SAP Data Intelligence to push data into SAP Analytics Cloud 
 <br>![](./images/Ex2_18.png)
 
 16. Insert the relevant information as shown in the screenshot below. Precisely:
-<br> <b> host: </b> ai-sandbox.eu10.sapanalytics.cloud
-<br> <b> oauth2TokenUrl: </b> https://ai-sandbox.authentication.eu10.hana.ondemand.com/oauth/token
-<br> <b> oauth2AuthUrl: </b> https://ai-sandbox.authentication.eu10.hana.ondemand.com/oauth/authorize
-<br> <b> oauth2ClientId: </b> sb-a07f1352-64c8-452d-94af-c992a3c69319!b50794|client!b3650
-<br> <b> oauth2ClientSecret: </b> P/GKhBm+OnsW9ADyDmzz/FJZ3vY= 
+<br> <b> host: </b> di-sac-teched2020.eu10.hcs.cloud.sap
+<br> <b> oauth2TokenUrl: </b> https://di-sac-teched2020.authentication.eu10.hana.ondemand.com/oauth/token
+<br> <b> oauth2AuthUrl: </b> https://di-sac-teched2020.authentication.eu10.hana.ondemand.com/oauth/authorize
+<br> <b> oauth2ClientId: </b> sb-bbebe653-976e-4202-bc63-1ea71e8ec735!b67304|client!b3650
+<br> <b> oauth2ClientSecret: </b> eqqLt8NLBi4J1rpTee3GSmo0LyM= 
 <br> For the remaining configuration settings, everything can remain as is
 <br>![](./images/Ex2_21.png)
 
@@ -95,6 +95,11 @@ In order to utilize SAP Data Intelligence to push data into SAP Analytics Cloud 
 19. This take you to the location as seen below. Click on the link which will grant authorization.
 <br>![](./images/Ex2_25.png)
 
+20. You will be redirected to the Log On screen below. Please insert the following and click on `Log On` afterwards:
+<br> <b> E-Mail or Use Name: </b> christian.tietz+001@sap.com
+<br> <b> Password: </b> Welcome01
+<br>![](./images/Ex2_29.png)
+
 20. As soon as permission is granted you can take a look at the Access Token
 <br>![](./images/Ex2_24.png)
 
@@ -106,7 +111,6 @@ In order to utilize SAP Data Intelligence to push data into SAP Analytics Cloud 
 
 23. You will notice two API responses being of status 200. These indicate that the Push Operation has been successfully accomplished.
 <br>![](./images/Ex2_28.png)
-
 
 ## Summary
 
