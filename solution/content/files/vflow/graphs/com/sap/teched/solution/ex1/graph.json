@@ -1,13 +1,126 @@
 {
     "properties": {},
-    "description": "[DAT164] Data Preparation",
+    "description": "Solution Ex1",
     "processes": {
+        "structuredfileconsumer1": {
+            "component": "com.sap.storage.consumer",
+            "metadata": {
+                "label": "Structured File Consumer",
+                "x": 80,
+                "y": 109,
+                "height": 80,
+                "width": 120,
+                "extensible": false,
+                "config": {
+                    "service": "s3",
+                    "s3Connection": {
+                        "configurationType": "Configuration Manager",
+                        "connectionID": "S3"
+                    },
+                    "s3AdaptedDataset": {
+                        "remoteObjectReference": {
+                            "connection": {
+                                "id": "S3",
+                                "type": "S3"
+                            },
+                            "name": "Product_Reviews",
+                            "remoteObjectType": "FILE.CSV",
+                            "qualifiedName": "/Product_Reviews",
+                            "nativeQualifiedName": "/Product_Reviews",
+                            "owner": "flowagent",
+                            "size": 15520,
+                            "version": {
+                                "dataLastModified": 1606150219000,
+                                "metadataLastModified": 1606150219000,
+                                "metadataVersionNumber": 1606150219000
+                            }
+                        },
+                        "dataAccessConfiguration": {
+                            "rowDelimiter": "\r\n",
+                            "charset": "ISO-8859-1",
+                            "textDelimiter": "\"",
+                            "header": true,
+                            "attributes": [
+                                {
+                                    "name": "REVIEW_DATE",
+                                    "format": "yyyy-MM-dd"
+                                }
+                            ],
+                            "escapeCharacter": "\"",
+                            "colDelimiter": ","
+                        },
+                        "schema": {
+                            "genericType": "TABLE",
+                            "tableBasedRepresentation": {
+                                "attributes": [
+                                    {
+                                        "name": "REVIEW_ID",
+                                        "templateType": "int32",
+                                        "datatype": "INTEGER",
+                                        "length": 4
+                                    },
+                                    {
+                                        "name": "PRODUCT_ID",
+                                        "templateType": "string",
+                                        "datatype": "STRING",
+                                        "length": 7
+                                    },
+                                    {
+                                        "name": "CUSTOMER_ID",
+                                        "templateType": "int32",
+                                        "datatype": "INTEGER",
+                                        "length": 4
+                                    },
+                                    {
+                                        "name": "COUNTRY",
+                                        "templateType": "string",
+                                        "datatype": "STRING",
+                                        "length": 2
+                                    },
+                                    {
+                                        "name": "REVIEW_DATE",
+                                        "templateType": "date",
+                                        "datatype": "DATE",
+                                        "format": "yyyy-MM-dd"
+                                    },
+                                    {
+                                        "name": "REVIEW_TITLE",
+                                        "templateType": "string",
+                                        "datatype": "STRING",
+                                        "length": 27
+                                    },
+                                    {
+                                        "name": "REVIEW_TEXT",
+                                        "templateType": "string",
+                                        "datatype": "STRING",
+                                        "length": 500
+                                    }
+                                ]
+                            }
+                        },
+                        "capabilityProperties": [
+                            {
+                                "name": "isProfileable",
+                                "value": "true"
+                            }
+                        ]
+                    }
+                },
+                "outports": [
+                    {
+                        "name": "outTable",
+                        "type": "table",
+                        "vtype-ID": "$GRAPH.generated.structuredfileconsumer1_outTable"
+                    }
+                ]
+            }
+        },
         "tableconsumer1": {
             "component": "com.sap.database.table.consumer",
             "metadata": {
                 "label": "Table Consumer",
-                "x": 17,
-                "y": 12,
+                "x": 80,
+                "y": 251,
                 "height": 80,
                 "width": 120,
                 "extensible": false,
@@ -124,8 +237,7 @@
                                 "value": "true"
                             }
                         ]
-                    },
-                    "fetchSize": 1000
+                    }
                 },
                 "outports": [
                     {
@@ -136,166 +248,12 @@
                 ]
             }
         },
-        "structuredfileconsumer1": {
-            "component": "com.sap.storage.consumer",
-            "metadata": {
-                "label": "Structured File Consumer",
-                "x": 17,
-                "y": 132,
-                "height": 80,
-                "width": 120,
-                "extensible": false,
-                "config": {
-                    "service": "s3",
-                    "s3Connection": {
-                        "configurationType": "Configuration Manager",
-                        "connectionID": "S3"
-                    },
-                    "s3AdaptedDataset": {
-                        "remoteObjectReference": {
-                            "connection": {
-                                "id": "S3",
-                                "type": "S3"
-                            },
-                            "name": "product_reviews_2017_2019.csv",
-                            "remoteObjectType": "FILE.CSV",
-                            "qualifiedName": "/DAT164/product_reviews_2017_2019.csv",
-                            "nativeQualifiedName": "/DAT164/product_reviews_2017_2019.csv",
-                            "owner": "flowagent",
-                            "size": 15424,
-                            "version": {
-                                "dataLastModified": 1602527914000,
-                                "metadataLastModified": 1602527914000,
-                                "metadataVersionNumber": 1602527914000
-                            }
-                        },
-                        "dataAccessConfiguration": {
-                            "rowDelimiter": "\n",
-                            "charset": "ISO-8859-1",
-                            "textDelimiter": "\"",
-                            "header": true,
-                            "attributes": [
-                                {
-                                    "name": "REVIEW_DATE",
-                                    "format": "yyyy-MM-dd"
-                                }
-                            ],
-                            "escapeCharacter": "\"",
-                            "colDelimiter": ","
-                        },
-                        "schema": {
-                            "genericType": "TABLE",
-                            "tableBasedRepresentation": {
-                                "attributes": [
-                                    {
-                                        "name": "REVIEW_ID",
-                                        "templateType": "int32",
-                                        "datatype": "INTEGER",
-                                        "length": 4
-                                    },
-                                    {
-                                        "name": "PRODUCT_ID",
-                                        "templateType": "string",
-                                        "datatype": "STRING",
-                                        "length": 7
-                                    },
-                                    {
-                                        "name": "CUSTOMER_ID",
-                                        "templateType": "int32",
-                                        "datatype": "INTEGER",
-                                        "length": 4
-                                    },
-                                    {
-                                        "name": "COUNTRY",
-                                        "templateType": "string",
-                                        "datatype": "STRING",
-                                        "length": 2
-                                    },
-                                    {
-                                        "name": "REVIEW_DATE",
-                                        "templateType": "date",
-                                        "datatype": "DATE",
-                                        "format": "yyyy-MM-dd"
-                                    },
-                                    {
-                                        "name": "REVIEW_TITLE",
-                                        "templateType": "string",
-                                        "datatype": "STRING",
-                                        "length": 27
-                                    },
-                                    {
-                                        "name": "REVIEW_TEXT",
-                                        "templateType": "string",
-                                        "datatype": "STRING",
-                                        "length": 500
-                                    }
-                                ]
-                            }
-                        },
-                        "capabilityProperties": [
-                            {
-                                "name": "isProfileable",
-                                "value": "true"
-                            }
-                        ]
-                    }
-                },
-                "outports": [
-                    {
-                        "name": "outTable",
-                        "type": "table",
-                        "vtype-ID": "$GRAPH.generated.structuredfileconsumer1_outTable"
-                    }
-                ]
-            }
-        },
-        "graphterminator1": {
-            "component": "com.sap.util.graphTerminator",
-            "metadata": {
-                "label": "Graph Terminator",
-                "x": 539.9999990463257,
-                "y": 72,
-                "height": 80,
-                "width": 120,
-                "config": {}
-            }
-        },
-        "structuredfileproducer1": {
-            "component": "com.sap.storage.producer",
-            "metadata": {
-                "label": "Structured File Producer",
-                "x": 370.9999990463257,
-                "y": 72,
-                "height": 80,
-                "width": 120,
-                "extensible": false,
-                "config": {
-                    "service": "s3",
-                    "s3Connection": {
-                        "configurationType": "Configuration Manager",
-                        "connectionID": "AWS_S3"
-                    },
-                    "s3TargetObjectName": "/DAT999/product_reviews.csv",
-                    "additionalProperties_csv": {
-                        "columnDelimiter": ",",
-                        "csvHeaderIncluded": true
-                    }
-                },
-                "inports": [
-                    {
-                        "name": "inTable",
-                        "type": "table",
-                        "vtype-ID": "$GRAPH.generated.datatransform1_output1"
-                    }
-                ]
-            }
-        },
         "datatransform1": {
             "component": "com.sap.datatransform",
             "metadata": {
                 "label": "Data Transform",
-                "x": 201.99999904632568,
-                "y": 72,
+                "x": 306,
+                "y": 183,
                 "height": 80,
                 "width": 120,
                 "extensible": false,
@@ -304,141 +262,51 @@
                         "nodeType": "ContainerNode",
                         "inputs": [
                             {
-                                "id": "109de575-b9f9-4da8-9c1d-e323209279f7",
+                                "id": "d515e6fb-e013-4566-a7b9-e7aff2eba8de",
                                 "nodeType": "InPort",
                                 "name": "input1",
                                 "attributes": [
                                     {
-                                        "id": "e6d2f087-6a0f-4063-be55-eeb9295d6430",
-                                        "name": "PRODUCTID",
-                                        "datatype": "string",
-                                        "nullable": false,
-                                        "length": 10
-                                    },
-                                    {
-                                        "id": "98f14453-c488-4ae9-adc5-dc59c90e9c8f",
-                                        "name": "CATEGORY",
-                                        "datatype": "string",
-                                        "nullable": false,
-                                        "length": 50
-                                    },
-                                    {
-                                        "id": "2bd420d1-5d14-44af-86be-fa742049bb0d",
-                                        "name": "CREATEDATE",
-                                        "datatype": "date",
-                                        "nullable": false
-                                    },
-                                    {
-                                        "id": "3a387622-46ed-4b9e-a0a9-68f392777f91",
-                                        "name": "CHANGEDATE",
-                                        "datatype": "date",
-                                        "nullable": false
-                                    },
-                                    {
-                                        "id": "aafcccfd-7225-46d8-a302-e5c4f59b108c",
-                                        "name": "PRODUCTNAME",
-                                        "datatype": "string",
-                                        "nullable": false,
-                                        "length": 50
-                                    },
-                                    {
-                                        "id": "b14e1338-5a4d-48d1-8a74-a7aaeab4299d",
-                                        "name": "PRODUCTDESC",
-                                        "datatype": "string",
-                                        "nullable": false,
-                                        "length": 1000
-                                    },
-                                    {
-                                        "id": "5652e097-aab5-497e-904d-4404accaff17",
-                                        "name": "WEIGHT_MEASURE",
-                                        "datatype": "float64",
-                                        "nullable": false
-                                    },
-                                    {
-                                        "id": "a9b50917-fb2b-42ac-93d4-0dbf5bba68d2",
-                                        "name": "PRICE",
-                                        "datatype": "float64",
-                                        "nullable": false
-                                    },
-                                    {
-                                        "id": "ece1acfb-c8da-4d52-9cdc-b94529579bcc",
-                                        "name": "PRODUCTPICURL",
-                                        "datatype": "string",
-                                        "nullable": false,
-                                        "length": 100
-                                    },
-                                    {
-                                        "id": "4e672f2b-15d7-4878-a9f0-fbc51ce6abf2",
-                                        "name": "WIDTH",
-                                        "datatype": "float64",
-                                        "nullable": false
-                                    },
-                                    {
-                                        "id": "25885bd5-6696-43c5-b2f1-39cfd5b8dee1",
-                                        "name": "DEPTH",
-                                        "datatype": "float64",
-                                        "nullable": false
-                                    },
-                                    {
-                                        "id": "1bdfa383-b1a8-454b-8a91-1559c548ef0a",
-                                        "name": "HEIGHT",
-                                        "datatype": "float64",
-                                        "nullable": false
-                                    }
-                                ],
-                                "UILayout": {
-                                    "x": 12,
-                                    "y": 12,
-                                    "height": 80,
-                                    "width": 80
-                                }
-                            },
-                            {
-                                "id": "eb95e2fa-6279-4c56-8e5b-921cc94a91fe",
-                                "nodeType": "InPort",
-                                "name": "input2",
-                                "attributes": [
-                                    {
-                                        "id": "bf969818-ef26-4f1a-bed2-d013acfaa8eb",
+                                        "id": "2da85fd1-a8ce-4f93-865c-2792ec9cbac7",
                                         "name": "REVIEW_ID",
                                         "datatype": "int32",
                                         "nullable": false
                                     },
                                     {
-                                        "id": "14d8c187-2427-4361-a9bb-b8319d612395",
+                                        "id": "be11f1a0-4bb6-4141-8a6b-99374ccda671",
                                         "name": "PRODUCT_ID",
                                         "datatype": "string",
                                         "nullable": false,
                                         "length": 7
                                     },
                                     {
-                                        "id": "e5a62b5c-49e6-479c-a7ad-5aec35efde2f",
+                                        "id": "6468597c-59e1-427b-a1e7-fc0f4e12cf95",
                                         "name": "CUSTOMER_ID",
                                         "datatype": "int32",
                                         "nullable": false
                                     },
                                     {
-                                        "id": "29eb9e2c-9539-4418-a3b1-b1c215a772fc",
+                                        "id": "d23ed6f4-2879-4b36-aebf-036e48257663",
                                         "name": "COUNTRY",
                                         "datatype": "string",
                                         "nullable": false,
                                         "length": 2
                                     },
                                     {
-                                        "id": "a68d3f68-f821-4f9a-acdf-2f84ac4f863c",
+                                        "id": "f0e160ef-e6bd-44fd-a3b1-f3de314d859e",
                                         "name": "REVIEW_DATE",
                                         "datatype": "date",
                                         "nullable": false
                                     },
                                     {
-                                        "id": "dcbc24ed-a6d8-4443-90da-7a4dd2354534",
+                                        "id": "fadb6bfe-18c6-4edb-999a-b1a22cbde72a",
                                         "name": "REVIEW_TITLE",
                                         "datatype": "string",
                                         "nullable": false,
                                         "length": 27
                                     },
                                     {
-                                        "id": "e5da111b-fe6a-4e1a-a201-658d0c9d12b5",
+                                        "id": "7ae62891-904b-4fa7-b67b-ecf6d072e10d",
                                         "name": "REVIEW_TEXT",
                                         "datatype": "string",
                                         "nullable": false,
@@ -451,94 +319,184 @@
                                     "height": 80,
                                     "width": 80
                                 }
-                            }
-                        ],
-                        "outputs": [
+                            },
                             {
-                                "id": "75a5730c-4d36-4bf1-b353-cb85fbc88781",
-                                "nodeType": "OutPort",
-                                "name": "output1",
+                                "id": "f62def25-d005-4d8d-8d4e-a83bcdafb2e6",
+                                "nodeType": "InPort",
+                                "name": "input2",
                                 "attributes": [
                                     {
-                                        "id": "fb7dbc5d-3973-4f1d-8431-33ca90928038",
+                                        "id": "79a2b8e1-5b09-4b41-a4cf-a6690efe8bd6",
                                         "name": "PRODUCTID",
                                         "datatype": "string",
                                         "nullable": false,
                                         "length": 10
                                     },
                                     {
-                                        "id": "3497bf0c-529f-406a-89ec-5c8a7e21856b",
+                                        "id": "5e7721e2-14c6-4eb0-a3e8-1c01d363ffca",
                                         "name": "CATEGORY",
                                         "datatype": "string",
                                         "nullable": false,
                                         "length": 50
                                     },
                                     {
-                                        "id": "62cf50be-a09a-4e8f-aa63-f5571759440a",
+                                        "id": "66c134e1-a51e-4d77-8019-f433c745476d",
                                         "name": "CREATEDATE",
                                         "datatype": "date",
                                         "nullable": false
                                     },
                                     {
-                                        "id": "840c1f81-a5dc-43da-8eff-f02a23d96f27",
+                                        "id": "84eb2288-5985-4d07-8be6-5e6ac474e2da",
                                         "name": "CHANGEDATE",
                                         "datatype": "date",
                                         "nullable": false
                                     },
                                     {
-                                        "id": "d974a599-b1a8-495e-8359-7a9dc81c334c",
+                                        "id": "08a18d18-1c12-4248-8ae2-b13466f948d9",
                                         "name": "PRODUCTNAME",
                                         "datatype": "string",
                                         "nullable": false,
                                         "length": 50
                                     },
                                     {
-                                        "id": "eadfcbbf-7d3e-4388-8d54-c05d555ae395",
+                                        "id": "7a12db29-3fca-4f6b-aba3-6b2e5c31cc97",
                                         "name": "PRODUCTDESC",
                                         "datatype": "string",
                                         "nullable": false,
                                         "length": 1000
                                     },
                                     {
-                                        "id": "1112551f-d7a9-4127-bef5-c0b362b91496",
+                                        "id": "3b9c1e2c-e74f-44d5-ae6d-a12b18ef1ee9",
+                                        "name": "WEIGHT_MEASURE",
+                                        "datatype": "float64",
+                                        "nullable": false
+                                    },
+                                    {
+                                        "id": "75df03f8-672c-448f-9031-3d4e73031b7f",
                                         "name": "PRICE",
                                         "datatype": "float64",
                                         "nullable": false
                                     },
                                     {
-                                        "id": "0e8e2f7d-fa36-402a-85c5-a54f0f916df4",
+                                        "id": "a3f6c0e0-bc3a-400e-a271-6944785ebb1b",
+                                        "name": "PRODUCTPICURL",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 100
+                                    },
+                                    {
+                                        "id": "0c2f2e11-ac1e-48d7-b2fd-31907b881647",
+                                        "name": "WIDTH",
+                                        "datatype": "float64",
+                                        "nullable": false
+                                    },
+                                    {
+                                        "id": "90defb27-3c4e-487f-b7dc-8d9861ef9a5c",
+                                        "name": "DEPTH",
+                                        "datatype": "float64",
+                                        "nullable": false
+                                    },
+                                    {
+                                        "id": "9d2b30c5-09cf-4ff0-bb56-e88145bdbd77",
+                                        "name": "HEIGHT",
+                                        "datatype": "float64",
+                                        "nullable": false
+                                    }
+                                ],
+                                "UILayout": {
+                                    "x": 12,
+                                    "y": 12,
+                                    "height": 80,
+                                    "width": 80
+                                }
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "id": "e20e11db-21d4-440d-b816-8b1d0252c64a",
+                                "nodeType": "OutPort",
+                                "name": "output1",
+                                "attributes": [
+                                    {
+                                        "id": "ae7118a3-8dc9-4f72-860a-90eedcdffe03",
+                                        "name": "PRODUCTID",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 10
+                                    },
+                                    {
+                                        "id": "085c1d41-65ec-4bff-bc18-d622aaea9793",
+                                        "name": "CATEGORY",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 50
+                                    },
+                                    {
+                                        "id": "c7d13336-16ea-4b6c-8fd2-2f336ea8345c",
+                                        "name": "CREATEDATE",
+                                        "datatype": "date",
+                                        "nullable": false
+                                    },
+                                    {
+                                        "id": "803a429a-bac8-4fc6-9055-a2a956654807",
+                                        "name": "CHANGEDATE",
+                                        "datatype": "date",
+                                        "nullable": false
+                                    },
+                                    {
+                                        "id": "a94e8046-89d4-4be4-9081-84b9290c644a",
+                                        "name": "PRODUCTNAME",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 50
+                                    },
+                                    {
+                                        "id": "ea02aee6-2853-4d76-bb09-63247b97bf74",
+                                        "name": "PRODUCTDESC",
+                                        "datatype": "string",
+                                        "nullable": false,
+                                        "length": 1000
+                                    },
+                                    {
+                                        "id": "73d8b29d-3e30-435b-9608-f5a7a9f0cd44",
+                                        "name": "PRICE",
+                                        "datatype": "float64",
+                                        "nullable": false
+                                    },
+                                    {
+                                        "id": "b28ed2b1-05af-49ab-8b79-0a37d046690d",
                                         "name": "REVIEW_ID",
                                         "datatype": "int32",
                                         "nullable": false
                                     },
                                     {
-                                        "id": "079cc0b5-950b-4233-9863-41874eb466cf",
+                                        "id": "af8d838f-63fa-46e9-bb3a-c930c5d464b4",
                                         "name": "CUSTOMER_ID",
                                         "datatype": "int32",
                                         "nullable": false
                                     },
                                     {
-                                        "id": "034eeba1-2386-4360-9632-939c6da9d17b",
+                                        "id": "9e911d60-5fa4-4fe6-bd89-cd797df85624",
                                         "name": "COUNTRY",
                                         "datatype": "string",
                                         "nullable": false,
                                         "length": 2
                                     },
                                     {
-                                        "id": "fd687298-b934-41ba-9710-242cad432a64",
+                                        "id": "7918df1a-fe11-44af-871a-757cd74932f3",
                                         "name": "REVIEW_DATE",
                                         "datatype": "date",
                                         "nullable": false
                                     },
                                     {
-                                        "id": "c2cf2e41-69f3-4b9b-b274-e3b28866e625",
+                                        "id": "ae2110bc-117e-4ea1-a14b-af3d7d06306b",
                                         "name": "REVIEW_TITLE",
                                         "datatype": "string",
                                         "nullable": false,
                                         "length": 27
                                     },
                                     {
-                                        "id": "2ed7263b-8c78-4fc6-b738-b21f30ff8963",
+                                        "id": "aab3aaf8-62d8-407d-9445-7c2291f19273",
                                         "name": "REVIEW_TEXT",
                                         "datatype": "string",
                                         "nullable": false,
@@ -556,88 +514,88 @@
                         ],
                         "nodes": [
                             {
-                                "id": "4610859a-4fc7-46ae-8c8e-039efdd6480e",
+                                "id": "806e4c26-c2c0-4daf-8192-beb1d7174ebc",
                                 "type": "JoinNode",
                                 "nodeType": "JoinNode",
                                 "name": "Join",
                                 "inputs": [
                                     {
-                                        "id": "c9252d87-17a0-415a-98f1-7c3e300bfa89",
+                                        "id": "6119b781-ced3-437d-8b93-07bb0889435a",
                                         "name": "Join_Input1",
                                         "attributes": [
                                             {
-                                                "id": "fd26b086-85bf-4c0f-8ff5-741efdce4916",
+                                                "id": "816ea70f-d0d2-4438-bde9-53d01f40a77d",
                                                 "name": "PRODUCTID",
                                                 "datatype": "string",
                                                 "nullable": false,
                                                 "length": 10
                                             },
                                             {
-                                                "id": "aaafface-b7cc-4f4c-97c7-99a72d09cb8c",
+                                                "id": "dca363b7-53b0-46f0-8c34-c534007aaf7d",
                                                 "name": "CATEGORY",
                                                 "datatype": "string",
                                                 "nullable": false,
                                                 "length": 50
                                             },
                                             {
-                                                "id": "9aed1618-6a54-43f1-b0ea-9096cdb4e71b",
+                                                "id": "e1759568-e777-4fb1-ae0d-1fe848b364c3",
                                                 "name": "CREATEDATE",
                                                 "datatype": "date",
                                                 "nullable": false
                                             },
                                             {
-                                                "id": "8f1cad16-3f10-4fd2-af89-cbfaf0c89ae2",
+                                                "id": "695b463e-2013-449b-821e-87df5fc31b34",
                                                 "name": "CHANGEDATE",
                                                 "datatype": "date",
                                                 "nullable": false
                                             },
                                             {
-                                                "id": "88d43b39-3970-4de0-bade-e7770e76e82f",
+                                                "id": "ecfbc898-94ae-4ad4-b37c-3e3a4f3cc08f",
                                                 "name": "PRODUCTNAME",
                                                 "datatype": "string",
                                                 "nullable": false,
                                                 "length": 50
                                             },
                                             {
-                                                "id": "c61174b9-acf0-4e9e-adfc-246b92957a2e",
+                                                "id": "987bdc62-5106-4ee5-8c3e-2c76859477c4",
                                                 "name": "PRODUCTDESC",
                                                 "datatype": "string",
                                                 "nullable": false,
                                                 "length": 1000
                                             },
                                             {
-                                                "id": "6d1c9ba3-84e2-48cd-ab49-f113f084c97f",
+                                                "id": "1f459abf-4cba-4343-89ec-c040ca30f0bf",
                                                 "name": "WEIGHT_MEASURE",
                                                 "datatype": "float64",
                                                 "nullable": false
                                             },
                                             {
-                                                "id": "fb9d31a7-179f-4d3e-b07d-a8ac0b430080",
+                                                "id": "27ccf0fc-e865-4a7c-8229-7bf4b2431e95",
                                                 "name": "PRICE",
                                                 "datatype": "float64",
                                                 "nullable": false
                                             },
                                             {
-                                                "id": "0835c98c-9afc-4061-8d2c-57b147ea3939",
+                                                "id": "eb36e5f9-5bb2-452d-9835-446bb527d0d1",
                                                 "name": "PRODUCTPICURL",
                                                 "datatype": "string",
                                                 "nullable": false,
                                                 "length": 100
                                             },
                                             {
-                                                "id": "00bc319d-dcc4-4e9c-b3ed-d0199fd054fe",
+                                                "id": "92d6764f-5d12-4632-9a2b-31108b70c29e",
                                                 "name": "WIDTH",
                                                 "datatype": "float64",
                                                 "nullable": false
                                             },
                                             {
-                                                "id": "bf14ddff-bfe6-43b6-8cc1-0efa273c5eed",
+                                                "id": "893fe88f-33b7-4ef5-a3cc-428ada30fd55",
                                                 "name": "DEPTH",
                                                 "datatype": "float64",
                                                 "nullable": false
                                             },
                                             {
-                                                "id": "3bec6107-941e-49e0-b51f-5e14f4961e72",
+                                                "id": "0bc95914-cf2d-4ad8-a070-0d047f41ac06",
                                                 "name": "HEIGHT",
                                                 "datatype": "float64",
                                                 "nullable": false
@@ -649,50 +607,50 @@
                                         }
                                     },
                                     {
-                                        "id": "b4d0a9eb-8a01-43f1-a7e5-33a0620d5d6e",
+                                        "id": "fa9a59c1-bf78-4f56-bead-7d627f2c1a0a",
                                         "name": "Join_Input2",
                                         "attributes": [
                                             {
-                                                "id": "33e7ad7f-f296-405c-9de6-73c40ccf7249",
+                                                "id": "79918116-d9fa-4652-b818-0dde9765c37a",
                                                 "name": "REVIEW_ID",
                                                 "datatype": "int32",
                                                 "nullable": false
                                             },
                                             {
-                                                "id": "6d481b1b-f520-4b5a-961c-1b00f584e0cd",
+                                                "id": "51280ca6-1e3f-4473-86c4-2f1bd970f29f",
                                                 "name": "PRODUCT_ID",
                                                 "datatype": "string",
                                                 "nullable": false,
                                                 "length": 7
                                             },
                                             {
-                                                "id": "5014adfe-e22e-4839-804b-e080a4759c69",
+                                                "id": "23edb678-7437-4fcf-ba77-c0820470f633",
                                                 "name": "CUSTOMER_ID",
                                                 "datatype": "int32",
                                                 "nullable": false
                                             },
                                             {
-                                                "id": "4cc08cde-2a14-4003-86e4-f3ffdc3e3fd0",
+                                                "id": "0a33aff9-95ef-4540-9515-614d99332a43",
                                                 "name": "COUNTRY",
                                                 "datatype": "string",
                                                 "nullable": false,
                                                 "length": 2
                                             },
                                             {
-                                                "id": "19a2991f-b838-483c-8590-9f4dab0820e3",
+                                                "id": "a58b18a7-2e3b-401c-ac77-eb4af5ab85b1",
                                                 "name": "REVIEW_DATE",
                                                 "datatype": "date",
                                                 "nullable": false
                                             },
                                             {
-                                                "id": "a2faa54f-9d7d-437c-8c65-afb9262dd91b",
+                                                "id": "16ba3770-eb90-41ca-83c8-32fa085d90a4",
                                                 "name": "REVIEW_TITLE",
                                                 "datatype": "string",
                                                 "nullable": false,
                                                 "length": 27
                                             },
                                             {
-                                                "id": "ca9cecb9-4bed-452c-ade5-4aa33d555887",
+                                                "id": "acd329a9-ee2c-4a6f-8d68-33e086e887f8",
                                                 "name": "REVIEW_TEXT",
                                                 "datatype": "string",
                                                 "nullable": false,
@@ -700,96 +658,96 @@
                                             }
                                         ],
                                         "UILayout": {
-                                            "x": 291.2060546875,
-                                            "y": 59.5
+                                            "x": 27.3828125,
+                                            "y": 322
                                         }
                                     }
                                 ],
                                 "outputs": [
                                     {
-                                        "id": "2b303d30-acd3-48aa-8b57-87442fa338e6",
+                                        "id": "313b19b5-0e8c-43ac-b4d6-4aa2860a6c87",
                                         "name": "Join_Output1",
                                         "attributes": [
                                             {
-                                                "id": "93f1b7fe-5439-47e7-aa33-58cbb9d95973",
+                                                "id": "6beedea1-4e33-4961-b88f-1f5e71294c82",
                                                 "name": "PRODUCTID",
                                                 "datatype": "string",
                                                 "nullable": false,
                                                 "length": 10
                                             },
                                             {
-                                                "id": "f1f8c411-ca93-467c-bd2f-a6c65c6ebb68",
+                                                "id": "85d4c14a-b452-4e6d-8181-74fe0bba5de3",
                                                 "name": "CATEGORY",
                                                 "datatype": "string",
                                                 "nullable": false,
                                                 "length": 50
                                             },
                                             {
-                                                "id": "33a563e6-0feb-4027-8662-ab74e072979e",
+                                                "id": "c173a6f0-3a93-405a-9e39-dfd50db51a09",
                                                 "name": "CREATEDATE",
                                                 "datatype": "date",
                                                 "nullable": false
                                             },
                                             {
-                                                "id": "afd8e125-6fe1-4bec-b2de-cb51a0a7cd89",
+                                                "id": "eb55bb13-f4fe-4201-9db6-9575e2cfa689",
                                                 "name": "CHANGEDATE",
                                                 "datatype": "date",
                                                 "nullable": false
                                             },
                                             {
-                                                "id": "57f6fe5e-369f-4912-8061-9d5c07e13979",
+                                                "id": "1eefba37-8281-4538-be37-f858c0bdf8f8",
                                                 "name": "PRODUCTNAME",
                                                 "datatype": "string",
                                                 "nullable": false,
                                                 "length": 50
                                             },
                                             {
-                                                "id": "5c03ae6e-b7c7-435f-8a37-b9a65752b70d",
+                                                "id": "1d5afd78-c4bd-417c-8a9b-81759335c126",
                                                 "name": "PRODUCTDESC",
                                                 "datatype": "string",
                                                 "nullable": false,
                                                 "length": 1000
                                             },
                                             {
-                                                "id": "b0fc62f9-3b19-4b5e-94f3-1caea32d6d4c",
+                                                "id": "4970ccb3-8e0e-4051-866e-c55370691002",
                                                 "name": "PRICE",
                                                 "datatype": "float64",
                                                 "nullable": false
                                             },
                                             {
-                                                "id": "6ce7b38b-d3af-4878-8b22-5e48c28116da",
+                                                "id": "5bd22930-9e6e-428e-90c4-275c98aa8c08",
                                                 "name": "REVIEW_ID",
                                                 "datatype": "int32",
                                                 "nullable": false
                                             },
                                             {
-                                                "id": "a2462811-638e-4620-9b57-055daa89298f",
+                                                "id": "2180ad83-015c-4cc5-b061-53e28977a509",
                                                 "name": "CUSTOMER_ID",
                                                 "datatype": "int32",
                                                 "nullable": false
                                             },
                                             {
-                                                "id": "71d1b1ed-91a5-4834-b6f2-d00cb845025f",
+                                                "id": "460f7b47-faf5-4bc3-a29a-f9d1d6ed224e",
                                                 "name": "COUNTRY",
                                                 "datatype": "string",
                                                 "nullable": false,
                                                 "length": 2
                                             },
                                             {
-                                                "id": "1d1a110a-5f42-44ad-9a33-bdff6a92c570",
+                                                "id": "222dac05-7900-42c1-8537-95a57c82803a",
                                                 "name": "REVIEW_DATE",
                                                 "datatype": "date",
                                                 "nullable": false
                                             },
                                             {
-                                                "id": "d6cd45ed-9867-4ee3-9af9-3a1307bfa1dd",
+                                                "id": "11a739b6-2fde-4adb-b799-717e35358194",
                                                 "name": "REVIEW_TITLE",
                                                 "datatype": "string",
                                                 "nullable": false,
                                                 "length": 27
                                             },
                                             {
-                                                "id": "8201397e-ed1d-40a6-acf5-cd30a5946b58",
+                                                "id": "d00ec0be-f5e1-44ce-81b2-9fbafb61ec35",
                                                 "name": "REVIEW_TEXT",
                                                 "datatype": "string",
                                                 "nullable": false,
@@ -806,9 +764,9 @@
                                 },
                                 "joinDefinitions": [
                                     {
-                                        "left": "c9252d87-17a0-415a-98f1-7c3e300bfa89",
-                                        "right": "b4d0a9eb-8a01-43f1-a7e5-33a0620d5d6e",
-                                        "type": "INNER",
+                                        "left": "6119b781-ced3-437d-8b93-07bb0889435a",
+                                        "right": "fa9a59c1-bf78-4f56-bead-7d627f2c1a0a",
+                                        "type": "LEFT_OUTER",
                                         "joinOptions": {
                                             "leftCache": "automatic",
                                             "rightCache": "automatic",
@@ -820,66 +778,66 @@
                                 ],
                                 "tableMappings": [
                                     {
-                                        "source": "c9252d87-17a0-415a-98f1-7c3e300bfa89",
-                                        "target": "2b303d30-acd3-48aa-8b57-87442fa338e6",
+                                        "source": "6119b781-ced3-437d-8b93-07bb0889435a",
+                                        "target": "313b19b5-0e8c-43ac-b4d6-4aa2860a6c87",
                                         "attributeMappings": [
                                             {
-                                                "source": "fd26b086-85bf-4c0f-8ff5-741efdce4916",
-                                                "target": "93f1b7fe-5439-47e7-aa33-58cbb9d95973"
+                                                "source": "816ea70f-d0d2-4438-bde9-53d01f40a77d",
+                                                "target": "6beedea1-4e33-4961-b88f-1f5e71294c82"
                                             },
                                             {
-                                                "source": "aaafface-b7cc-4f4c-97c7-99a72d09cb8c",
-                                                "target": "f1f8c411-ca93-467c-bd2f-a6c65c6ebb68"
+                                                "source": "dca363b7-53b0-46f0-8c34-c534007aaf7d",
+                                                "target": "85d4c14a-b452-4e6d-8181-74fe0bba5de3"
                                             },
                                             {
-                                                "source": "9aed1618-6a54-43f1-b0ea-9096cdb4e71b",
-                                                "target": "33a563e6-0feb-4027-8662-ab74e072979e"
+                                                "source": "e1759568-e777-4fb1-ae0d-1fe848b364c3",
+                                                "target": "c173a6f0-3a93-405a-9e39-dfd50db51a09"
                                             },
                                             {
-                                                "source": "8f1cad16-3f10-4fd2-af89-cbfaf0c89ae2",
-                                                "target": "afd8e125-6fe1-4bec-b2de-cb51a0a7cd89"
+                                                "source": "695b463e-2013-449b-821e-87df5fc31b34",
+                                                "target": "eb55bb13-f4fe-4201-9db6-9575e2cfa689"
                                             },
                                             {
-                                                "source": "88d43b39-3970-4de0-bade-e7770e76e82f",
-                                                "target": "57f6fe5e-369f-4912-8061-9d5c07e13979"
+                                                "source": "ecfbc898-94ae-4ad4-b37c-3e3a4f3cc08f",
+                                                "target": "1eefba37-8281-4538-be37-f858c0bdf8f8"
                                             },
                                             {
-                                                "source": "c61174b9-acf0-4e9e-adfc-246b92957a2e",
-                                                "target": "5c03ae6e-b7c7-435f-8a37-b9a65752b70d"
+                                                "source": "987bdc62-5106-4ee5-8c3e-2c76859477c4",
+                                                "target": "1d5afd78-c4bd-417c-8a9b-81759335c126"
                                             },
                                             {
-                                                "source": "fb9d31a7-179f-4d3e-b07d-a8ac0b430080",
-                                                "target": "b0fc62f9-3b19-4b5e-94f3-1caea32d6d4c"
+                                                "source": "27ccf0fc-e865-4a7c-8229-7bf4b2431e95",
+                                                "target": "4970ccb3-8e0e-4051-866e-c55370691002"
                                             }
                                         ]
                                     },
                                     {
-                                        "source": "b4d0a9eb-8a01-43f1-a7e5-33a0620d5d6e",
-                                        "target": "2b303d30-acd3-48aa-8b57-87442fa338e6",
+                                        "source": "fa9a59c1-bf78-4f56-bead-7d627f2c1a0a",
+                                        "target": "313b19b5-0e8c-43ac-b4d6-4aa2860a6c87",
                                         "attributeMappings": [
                                             {
-                                                "source": "33e7ad7f-f296-405c-9de6-73c40ccf7249",
-                                                "target": "6ce7b38b-d3af-4878-8b22-5e48c28116da"
+                                                "source": "79918116-d9fa-4652-b818-0dde9765c37a",
+                                                "target": "5bd22930-9e6e-428e-90c4-275c98aa8c08"
                                             },
                                             {
-                                                "source": "5014adfe-e22e-4839-804b-e080a4759c69",
-                                                "target": "a2462811-638e-4620-9b57-055daa89298f"
+                                                "source": "23edb678-7437-4fcf-ba77-c0820470f633",
+                                                "target": "2180ad83-015c-4cc5-b061-53e28977a509"
                                             },
                                             {
-                                                "source": "4cc08cde-2a14-4003-86e4-f3ffdc3e3fd0",
-                                                "target": "71d1b1ed-91a5-4834-b6f2-d00cb845025f"
+                                                "source": "0a33aff9-95ef-4540-9515-614d99332a43",
+                                                "target": "460f7b47-faf5-4bc3-a29a-f9d1d6ed224e"
                                             },
                                             {
-                                                "source": "19a2991f-b838-483c-8590-9f4dab0820e3",
-                                                "target": "1d1a110a-5f42-44ad-9a33-bdff6a92c570"
+                                                "source": "a58b18a7-2e3b-401c-ac77-eb4af5ab85b1",
+                                                "target": "222dac05-7900-42c1-8537-95a57c82803a"
                                             },
                                             {
-                                                "source": "a2faa54f-9d7d-437c-8c65-afb9262dd91b",
-                                                "target": "d6cd45ed-9867-4ee3-9af9-3a1307bfa1dd"
+                                                "source": "16ba3770-eb90-41ca-83c8-32fa085d90a4",
+                                                "target": "11a739b6-2fde-4adb-b799-717e35358194"
                                             },
                                             {
-                                                "source": "ca9cecb9-4bed-452c-ade5-4aa33d555887",
-                                                "target": "8201397e-ed1d-40a6-acf5-cd30a5946b58"
+                                                "source": "acd329a9-ee2c-4a6f-8d68-33e086e887f8",
+                                                "target": "d00ec0be-f5e1-44ce-81b2-9fbafb61ec35"
                                             }
                                         ]
                                     }
@@ -888,158 +846,158 @@
                         ],
                         "tableMappings": [
                             {
-                                "source": "109de575-b9f9-4da8-9c1d-e323209279f7",
-                                "target": "c9252d87-17a0-415a-98f1-7c3e300bfa89",
+                                "source": "f62def25-d005-4d8d-8d4e-a83bcdafb2e6",
+                                "target": "6119b781-ced3-437d-8b93-07bb0889435a",
                                 "attributeMappings": [
                                     {
-                                        "source": "e6d2f087-6a0f-4063-be55-eeb9295d6430",
-                                        "target": "fd26b086-85bf-4c0f-8ff5-741efdce4916"
+                                        "source": "79a2b8e1-5b09-4b41-a4cf-a6690efe8bd6",
+                                        "target": "816ea70f-d0d2-4438-bde9-53d01f40a77d"
                                     },
                                     {
-                                        "source": "98f14453-c488-4ae9-adc5-dc59c90e9c8f",
-                                        "target": "aaafface-b7cc-4f4c-97c7-99a72d09cb8c"
+                                        "source": "5e7721e2-14c6-4eb0-a3e8-1c01d363ffca",
+                                        "target": "dca363b7-53b0-46f0-8c34-c534007aaf7d"
                                     },
                                     {
-                                        "source": "2bd420d1-5d14-44af-86be-fa742049bb0d",
-                                        "target": "9aed1618-6a54-43f1-b0ea-9096cdb4e71b"
+                                        "source": "66c134e1-a51e-4d77-8019-f433c745476d",
+                                        "target": "e1759568-e777-4fb1-ae0d-1fe848b364c3"
                                     },
                                     {
-                                        "source": "3a387622-46ed-4b9e-a0a9-68f392777f91",
-                                        "target": "8f1cad16-3f10-4fd2-af89-cbfaf0c89ae2"
+                                        "source": "84eb2288-5985-4d07-8be6-5e6ac474e2da",
+                                        "target": "695b463e-2013-449b-821e-87df5fc31b34"
                                     },
                                     {
-                                        "source": "aafcccfd-7225-46d8-a302-e5c4f59b108c",
-                                        "target": "88d43b39-3970-4de0-bade-e7770e76e82f"
+                                        "source": "08a18d18-1c12-4248-8ae2-b13466f948d9",
+                                        "target": "ecfbc898-94ae-4ad4-b37c-3e3a4f3cc08f"
                                     },
                                     {
-                                        "source": "b14e1338-5a4d-48d1-8a74-a7aaeab4299d",
-                                        "target": "c61174b9-acf0-4e9e-adfc-246b92957a2e"
+                                        "source": "7a12db29-3fca-4f6b-aba3-6b2e5c31cc97",
+                                        "target": "987bdc62-5106-4ee5-8c3e-2c76859477c4"
                                     },
                                     {
-                                        "source": "5652e097-aab5-497e-904d-4404accaff17",
-                                        "target": "6d1c9ba3-84e2-48cd-ab49-f113f084c97f"
+                                        "source": "3b9c1e2c-e74f-44d5-ae6d-a12b18ef1ee9",
+                                        "target": "1f459abf-4cba-4343-89ec-c040ca30f0bf"
                                     },
                                     {
-                                        "source": "a9b50917-fb2b-42ac-93d4-0dbf5bba68d2",
-                                        "target": "fb9d31a7-179f-4d3e-b07d-a8ac0b430080"
+                                        "source": "75df03f8-672c-448f-9031-3d4e73031b7f",
+                                        "target": "27ccf0fc-e865-4a7c-8229-7bf4b2431e95"
                                     },
                                     {
-                                        "source": "ece1acfb-c8da-4d52-9cdc-b94529579bcc",
-                                        "target": "0835c98c-9afc-4061-8d2c-57b147ea3939"
+                                        "source": "a3f6c0e0-bc3a-400e-a271-6944785ebb1b",
+                                        "target": "eb36e5f9-5bb2-452d-9835-446bb527d0d1"
                                     },
                                     {
-                                        "source": "4e672f2b-15d7-4878-a9f0-fbc51ce6abf2",
-                                        "target": "00bc319d-dcc4-4e9c-b3ed-d0199fd054fe"
+                                        "source": "0c2f2e11-ac1e-48d7-b2fd-31907b881647",
+                                        "target": "92d6764f-5d12-4632-9a2b-31108b70c29e"
                                     },
                                     {
-                                        "source": "25885bd5-6696-43c5-b2f1-39cfd5b8dee1",
-                                        "target": "bf14ddff-bfe6-43b6-8cc1-0efa273c5eed"
+                                        "source": "90defb27-3c4e-487f-b7dc-8d9861ef9a5c",
+                                        "target": "893fe88f-33b7-4ef5-a3cc-428ada30fd55"
                                     },
                                     {
-                                        "source": "1bdfa383-b1a8-454b-8a91-1559c548ef0a",
-                                        "target": "3bec6107-941e-49e0-b51f-5e14f4961e72"
+                                        "source": "9d2b30c5-09cf-4ff0-bb56-e88145bdbd77",
+                                        "target": "0bc95914-cf2d-4ad8-a070-0d047f41ac06"
                                     }
                                 ],
                                 "UILayout": {
-                                    "points": "92,52 125,52 125,103 157.99999904632568,103"
+                                    "points": "97,52 124.99999952316284,52 124.99999952316284,103 152.99999904632568,103"
                                 }
                             },
                             {
-                                "source": "eb95e2fa-6279-4c56-8e5b-921cc94a91fe",
-                                "target": "b4d0a9eb-8a01-43f1-a7e5-33a0620d5d6e",
+                                "source": "d515e6fb-e013-4566-a7b9-e7aff2eba8de",
+                                "target": "fa9a59c1-bf78-4f56-bead-7d627f2c1a0a",
                                 "attributeMappings": [
                                     {
-                                        "source": "bf969818-ef26-4f1a-bed2-d013acfaa8eb",
-                                        "target": "33e7ad7f-f296-405c-9de6-73c40ccf7249"
+                                        "source": "2da85fd1-a8ce-4f93-865c-2792ec9cbac7",
+                                        "target": "79918116-d9fa-4652-b818-0dde9765c37a"
                                     },
                                     {
-                                        "source": "14d8c187-2427-4361-a9bb-b8319d612395",
-                                        "target": "6d481b1b-f520-4b5a-961c-1b00f584e0cd"
+                                        "source": "be11f1a0-4bb6-4141-8a6b-99374ccda671",
+                                        "target": "51280ca6-1e3f-4473-86c4-2f1bd970f29f"
                                     },
                                     {
-                                        "source": "e5a62b5c-49e6-479c-a7ad-5aec35efde2f",
-                                        "target": "5014adfe-e22e-4839-804b-e080a4759c69"
+                                        "source": "6468597c-59e1-427b-a1e7-fc0f4e12cf95",
+                                        "target": "23edb678-7437-4fcf-ba77-c0820470f633"
                                     },
                                     {
-                                        "source": "29eb9e2c-9539-4418-a3b1-b1c215a772fc",
-                                        "target": "4cc08cde-2a14-4003-86e4-f3ffdc3e3fd0"
+                                        "source": "d23ed6f4-2879-4b36-aebf-036e48257663",
+                                        "target": "0a33aff9-95ef-4540-9515-614d99332a43"
                                     },
                                     {
-                                        "source": "a68d3f68-f821-4f9a-acdf-2f84ac4f863c",
-                                        "target": "19a2991f-b838-483c-8590-9f4dab0820e3"
+                                        "source": "f0e160ef-e6bd-44fd-a3b1-f3de314d859e",
+                                        "target": "a58b18a7-2e3b-401c-ac77-eb4af5ab85b1"
                                     },
                                     {
-                                        "source": "dcbc24ed-a6d8-4443-90da-7a4dd2354534",
-                                        "target": "a2faa54f-9d7d-437c-8c65-afb9262dd91b"
+                                        "source": "fadb6bfe-18c6-4edb-999a-b1a22cbde72a",
+                                        "target": "16ba3770-eb90-41ca-83c8-32fa085d90a4"
                                     },
                                     {
-                                        "source": "e5da111b-fe6a-4e1a-a201-658d0c9d12b5",
-                                        "target": "ca9cecb9-4bed-452c-ade5-4aa33d555887"
+                                        "source": "7ae62891-904b-4fa7-b67b-ecf6d072e10d",
+                                        "target": "acd329a9-ee2c-4a6f-8d68-33e086e887f8"
                                     }
                                 ],
                                 "UILayout": {
-                                    "points": "92,172 125,172 125,121 157.99999904632568,121"
+                                    "points": "97,172 124.99999952316284,172 124.99999952316284,121 152.99999904632568,121"
                                 }
                             },
                             {
-                                "source": "2b303d30-acd3-48aa-8b57-87442fa338e6",
-                                "target": "75a5730c-4d36-4bf1-b353-cb85fbc88781",
+                                "source": "313b19b5-0e8c-43ac-b4d6-4aa2860a6c87",
+                                "target": "e20e11db-21d4-440d-b816-8b1d0252c64a",
                                 "attributeMappings": [
                                     {
-                                        "source": "93f1b7fe-5439-47e7-aa33-58cbb9d95973",
-                                        "target": "fb7dbc5d-3973-4f1d-8431-33ca90928038"
+                                        "source": "6beedea1-4e33-4961-b88f-1f5e71294c82",
+                                        "target": "ae7118a3-8dc9-4f72-860a-90eedcdffe03"
                                     },
                                     {
-                                        "source": "f1f8c411-ca93-467c-bd2f-a6c65c6ebb68",
-                                        "target": "3497bf0c-529f-406a-89ec-5c8a7e21856b"
+                                        "source": "85d4c14a-b452-4e6d-8181-74fe0bba5de3",
+                                        "target": "085c1d41-65ec-4bff-bc18-d622aaea9793"
                                     },
                                     {
-                                        "source": "33a563e6-0feb-4027-8662-ab74e072979e",
-                                        "target": "62cf50be-a09a-4e8f-aa63-f5571759440a"
+                                        "source": "c173a6f0-3a93-405a-9e39-dfd50db51a09",
+                                        "target": "c7d13336-16ea-4b6c-8fd2-2f336ea8345c"
                                     },
                                     {
-                                        "source": "afd8e125-6fe1-4bec-b2de-cb51a0a7cd89",
-                                        "target": "840c1f81-a5dc-43da-8eff-f02a23d96f27"
+                                        "source": "eb55bb13-f4fe-4201-9db6-9575e2cfa689",
+                                        "target": "803a429a-bac8-4fc6-9055-a2a956654807"
                                     },
                                     {
-                                        "source": "57f6fe5e-369f-4912-8061-9d5c07e13979",
-                                        "target": "d974a599-b1a8-495e-8359-7a9dc81c334c"
+                                        "source": "1eefba37-8281-4538-be37-f858c0bdf8f8",
+                                        "target": "a94e8046-89d4-4be4-9081-84b9290c644a"
                                     },
                                     {
-                                        "source": "5c03ae6e-b7c7-435f-8a37-b9a65752b70d",
-                                        "target": "eadfcbbf-7d3e-4388-8d54-c05d555ae395"
+                                        "source": "1d5afd78-c4bd-417c-8a9b-81759335c126",
+                                        "target": "ea02aee6-2853-4d76-bb09-63247b97bf74"
                                     },
                                     {
-                                        "source": "b0fc62f9-3b19-4b5e-94f3-1caea32d6d4c",
-                                        "target": "1112551f-d7a9-4127-bef5-c0b362b91496"
+                                        "source": "4970ccb3-8e0e-4051-866e-c55370691002",
+                                        "target": "73d8b29d-3e30-435b-9608-f5a7a9f0cd44"
                                     },
                                     {
-                                        "source": "6ce7b38b-d3af-4878-8b22-5e48c28116da",
-                                        "target": "0e8e2f7d-fa36-402a-85c5-a54f0f916df4"
+                                        "source": "5bd22930-9e6e-428e-90c4-275c98aa8c08",
+                                        "target": "b28ed2b1-05af-49ab-8b79-0a37d046690d"
                                     },
                                     {
-                                        "source": "a2462811-638e-4620-9b57-055daa89298f",
-                                        "target": "079cc0b5-950b-4233-9863-41874eb466cf"
+                                        "source": "2180ad83-015c-4cc5-b061-53e28977a509",
+                                        "target": "af8d838f-63fa-46e9-bb3a-c930c5d464b4"
                                     },
                                     {
-                                        "source": "71d1b1ed-91a5-4834-b6f2-d00cb845025f",
-                                        "target": "034eeba1-2386-4360-9632-939c6da9d17b"
+                                        "source": "460f7b47-faf5-4bc3-a29a-f9d1d6ed224e",
+                                        "target": "9e911d60-5fa4-4fe6-bd89-cd797df85624"
                                     },
                                     {
-                                        "source": "1d1a110a-5f42-44ad-9a33-bdff6a92c570",
-                                        "target": "fd687298-b934-41ba-9710-242cad432a64"
+                                        "source": "222dac05-7900-42c1-8537-95a57c82803a",
+                                        "target": "7918df1a-fe11-44af-871a-757cd74932f3"
                                     },
                                     {
-                                        "source": "d6cd45ed-9867-4ee3-9af9-3a1307bfa1dd",
-                                        "target": "c2cf2e41-69f3-4b9b-b274-e3b28866e625"
+                                        "source": "11a739b6-2fde-4adb-b799-717e35358194",
+                                        "target": "ae2110bc-117e-4ea1-a14b-af3d7d06306b"
                                     },
                                     {
-                                        "source": "8201397e-ed1d-40a6-acf5-cd30a5946b58",
-                                        "target": "2ed7263b-8c78-4fc6-b738-b21f30ff8963"
+                                        "source": "d00ec0be-f5e1-44ce-81b2-9fbafb61ec35",
+                                        "target": "aab3aaf8-62d8-407d-9445-7c2291f19273"
                                     }
                                 ],
                                 "UILayout": {
-                                    "points": "277.9999990463257,112 327.9999990463257,112"
+                                    "points": "282.9999990463257,112 322.9999990463257,112"
                                 }
                             }
                         ],
@@ -1050,12 +1008,12 @@
                     {
                         "name": "input1",
                         "type": "table",
-                        "vtype-ID": "$GRAPH.generated.tableconsumer1_outTable"
+                        "vtype-ID": "$GRAPH.generated.structuredfileconsumer1_outTable"
                     },
                     {
                         "name": "input2",
                         "type": "table",
-                        "vtype-ID": "$GRAPH.generated.structuredfileconsumer1_outTable"
+                        "vtype-ID": "$GRAPH.generated.tableconsumer1_outTable"
                     }
                 ],
                 "additionaloutports": [
@@ -1066,13 +1024,80 @@
                     }
                 ]
             }
+        },
+        "structuredfileproducer1": {
+            "component": "com.sap.storage.producer",
+            "metadata": {
+                "label": "Structured File Producer",
+                "x": 475,
+                "y": 183,
+                "height": 80,
+                "width": 120,
+                "extensible": false,
+                "config": {
+                    "service": "s3",
+                    "s3Connection": {
+                        "configurationType": "Configuration Manager",
+                        "connectionID": "S3"
+                    },
+                    "s3TargetObjectName": "Product_Enriched_TAXY",
+                    "additionalProperties_csv": {
+                        "columnDelimiter": ",",
+                        "csvHeaderIncluded": true
+                    }
+                },
+                "inports": [
+                    {
+                        "name": "inTable",
+                        "type": "table",
+                        "vtype-ID": "$GRAPH.generated.datatransform1_output1"
+                    }
+                ]
+            }
+        },
+        "graphterminator1": {
+            "component": "com.sap.util.graphTerminator",
+            "metadata": {
+                "label": "Graph Terminator",
+                "x": 644,
+                "y": 183,
+                "height": 80,
+                "width": 120,
+                "config": {}
+            }
         }
     },
     "groups": [],
     "connections": [
         {
             "metadata": {
-                "points": "494.9999990463257,112 534.9999990463257,112"
+                "points": "204,149 252.5,149 252.5,214 301,214"
+            },
+            "src": {
+                "port": "outTable",
+                "process": "structuredfileconsumer1"
+            },
+            "tgt": {
+                "port": "input1",
+                "process": "datatransform1"
+            }
+        },
+        {
+            "metadata": {
+                "points": "204,291 252.5,291 252.5,232 301,232"
+            },
+            "src": {
+                "port": "outTable",
+                "process": "tableconsumer1"
+            },
+            "tgt": {
+                "port": "input2",
+                "process": "datatransform1"
+            }
+        },
+        {
+            "metadata": {
+                "points": "599,223 639,223"
             },
             "src": {
                 "port": "outMessage",
@@ -1085,33 +1110,7 @@
         },
         {
             "metadata": {
-                "points": "141,52 168.99999952316284,52 168.99999952316284,103 196.99999904632568,103"
-            },
-            "src": {
-                "port": "outTable",
-                "process": "tableconsumer1"
-            },
-            "tgt": {
-                "port": "input1",
-                "process": "datatransform1"
-            }
-        },
-        {
-            "metadata": {
-                "points": "141,172 168.99999952316284,172 168.99999952316284,121 196.99999904632568,121"
-            },
-            "src": {
-                "port": "outTable",
-                "process": "structuredfileconsumer1"
-            },
-            "tgt": {
-                "port": "input2",
-                "process": "datatransform1"
-            }
-        },
-        {
-            "metadata": {
-                "points": "325.9999990463257,112 365.9999990463257,112"
+                "points": "430,223 470,223"
             },
             "src": {
                 "port": "output1",

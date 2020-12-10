@@ -1,0 +1,228 @@
+{
+    "properties": {},
+    "iconsrc": "sac-producer.svg",
+    "description": "Solution Ex2",
+    "processes": {
+        "sapanalyticscloudproducer1": {
+            "component": "com.sap.sac.producer",
+            "metadata": {
+                "label": "SAP Analytics Cloud Producer",
+                "x": 654.9999980926514,
+                "y": 12,
+                "height": 80,
+                "width": 120,
+                "ui": "dynpath",
+                "config": {
+                    "host": "di-sac-teched2020.eu10.hcs.cloud.sap",
+                    "oauth2TokenUrl": "https://di-sac-teched2020.authentication.eu10.hana.ondemand.com/oauth/token",
+                    "oauth2AuthUrl": "https://di-sac-teched2020.authentication.eu10.hana.ondemand.com/oauth/authorize",
+                    "oauth2ClientId": "sb-bbebe653-976e-4202-bc63-1ea71e8ec735!b67304|client!b3650",
+                    "oauth2ClientSecret": "eqqLt8NLBi4J1rpTee3GSmo0LyM="
+                }
+            }
+        },
+        "decodetable1": {
+            "component": "com.sap.table.decode",
+            "metadata": {
+                "label": "Decode Table",
+                "x": 316.99999809265137,
+                "y": 12,
+                "height": 80,
+                "width": 120,
+                "config": {
+                    "format": "CSV",
+                    "csvHeader": "Column names",
+                    "csvLazyQuotes": false
+                }
+            }
+        },
+        "wiretap2": {
+            "component": "com.sap.util.wiretap",
+            "metadata": {
+                "label": "Wiretap",
+                "x": 823.9999980926514,
+                "y": 12,
+                "height": 80,
+                "width": 120,
+                "ui": "dynpath",
+                "config": {}
+            }
+        },
+        "sapanalyticscloudformatter1": {
+            "component": "com.sap.sac.formatter",
+            "metadata": {
+                "label": "SAP Analytics Cloud Formatter",
+                "x": 485.99999809265137,
+                "y": 12,
+                "height": 80,
+                "width": 120,
+                "extensible": true,
+                "config": {
+                    "tenant": "9AD52",
+                    "name": "TAXY_Product_Reviews",
+                    "inferColumnInfo": false,
+                    "outputSchema": [
+                        {
+                            "name": "PRODUCTID",
+                            "class": "string",
+                            "size": 128
+                        },
+                        {
+                            "name": "CATEGORY",
+                            "class": "string",
+                            "size": 128
+                        },
+                        {
+                            "name": "CREATEDATE",
+                            "class": "date"
+                        },
+                        {
+                            "name": "CHANGEDATE",
+                            "class": "date"
+                        },
+                        {
+                            "name": "PRODUCTNAME",
+                            "class": "string",
+                            "size": 128
+                        },
+                        {
+                            "name": "PRODUCTDESC",
+                            "class": "string",
+                            "size": 512
+                        },
+                        {
+                            "name": "PRICE",
+                            "class": "number"
+                        },
+                        {
+                            "name": "REVIEW_ID",
+                            "class": "integer"
+                        },
+                        {
+                            "name": "CUSTOMER_ID",
+                            "class": "integer"
+                        },
+                        {
+                            "name": "COUNTRY",
+                            "class": "string",
+                            "size": 128
+                        },
+                        {
+                            "name": "REVIEW_DATE",
+                            "class": "date"
+                        },
+                        {
+                            "name": "REVIEW_TITLE",
+                            "class": "string",
+                            "size": 128
+                        },
+                        {
+                            "name": "REVIEW_TEXT",
+                            "class": "string",
+                            "size": 1028
+                        }
+                    ]
+                }
+            }
+        },
+        "readfile2": {
+            "component": "com.sap.file.read",
+            "metadata": {
+                "label": "Read File",
+                "x": 17,
+                "y": 12,
+                "height": 80,
+                "width": 120,
+                "config": {
+                    "mode": "Once",
+                    "connection": {
+                        "configurationType": "Connection Management",
+                        "connectionID": "S3"
+                    },
+                    "path": "/Product_Enriched_TAXY"
+                }
+            }
+        },
+        "fromfile1": {
+            "component": "com.sap.file.fromFile",
+            "metadata": {
+                "label": "From File",
+                "x": 201.99999904632568,
+                "y": 27,
+                "height": 50,
+                "width": 50,
+                "config": {}
+            }
+        }
+    },
+    "groups": [],
+    "connections": [
+        {
+            "metadata": {
+                "points": "778.9999980926514,52 818.9999980926514,52"
+            },
+            "src": {
+                "port": "out",
+                "process": "sapanalyticscloudproducer1"
+            },
+            "tgt": {
+                "port": "in",
+                "process": "wiretap2"
+            }
+        },
+        {
+            "metadata": {
+                "points": "440.99999809265137,52 480.99999809265137,52"
+            },
+            "src": {
+                "port": "output",
+                "process": "decodetable1"
+            },
+            "tgt": {
+                "port": "input",
+                "process": "sapanalyticscloudformatter1"
+            }
+        },
+        {
+            "metadata": {
+                "points": "609.9999980926514,52 649.9999980926514,52"
+            },
+            "src": {
+                "port": "output",
+                "process": "sapanalyticscloudformatter1"
+            },
+            "tgt": {
+                "port": "in",
+                "process": "sapanalyticscloudproducer1"
+            }
+        },
+        {
+            "metadata": {
+                "points": "141,43 168.99999952316284,43 168.99999952316284,52 196.99999904632568,52"
+            },
+            "src": {
+                "port": "file",
+                "process": "readfile2"
+            },
+            "tgt": {
+                "port": "file",
+                "process": "fromfile1"
+            }
+        },
+        {
+            "metadata": {
+                "points": "255.99999904632568,61 283.9999985694885,61 283.9999985694885,52 311.99999809265137,52"
+            },
+            "src": {
+                "port": "message",
+                "process": "fromfile1"
+            },
+            "tgt": {
+                "port": "input",
+                "process": "decodetable1"
+            }
+        }
+    ],
+    "inports": {},
+    "outports": {}
+}

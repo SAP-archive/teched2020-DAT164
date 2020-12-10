@@ -8,8 +8,8 @@ The graph is composed of the following components:
 
 * Read File Operator: Used to read files from local storage or major cloud filestores.
 * Table Decoder: Parses raw bytes provided by Read File into a CSV-style message.table format, which the next operator reads.
-* SAP Analytics Cloud Formatter (Beta): Parses the input message and configuration details, and then produces an output format that is accepted in SAP Analytics Cloud.
-* SAP Analytics Cloud Producer (Beta): Handles HTTP requests to the SAP Analytics Cloud application. It also provides a response to SAP Analytics Cloud Formatter, if necessary.
+* SAP Analytics Cloud Formatter: Parses the input message and configuration details, and then produces an output format that is accepted in SAP Analytics Cloud.
+* SAP Analytics Cloud Producer: Handles HTTP requests to the SAP Analytics Cloud application. It also provides a response to SAP Analytics Cloud Formatter, if necessary.
 * Wiretaps: Allows insight to data passed between operators.
 
 #### Prerequisites
