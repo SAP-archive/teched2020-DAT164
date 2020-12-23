@@ -1,5 +1,7 @@
 # DAT164 - Create Data Flows Covering Both SAP and Non-SAP Data Sources Using SAP Data Intelligence
 
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/teched2020-DAT164)](https://api.reuse.software/info/github.com/SAP-samples/teched2020-DAT164)
+
 ## Description
 
 This repository contains the material for the SAP TechEd 2020 session <b>DAT164 - Create Data Flows Covering Both SAP and Non-SAP Data Sources Using SAP Data Intelligence</b>.
